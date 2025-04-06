@@ -30,4 +30,14 @@ public class ShopeeCredentialProvider : IShopeeCredential
 }
 ```
 
+Add & custom HttpClientBuilder
+```
+builder.Services.AddShopeeHttpClient();
+```
+
+Add API services
+```
+builder.Services.AddShopeeAPIv2();
+```
+
  

@@ -7,10 +7,10 @@ namespace Light.Shopee
     {
         private const string HTTP_CLIENT_NAME = "ShopeeApiReference";
 
-        public static HttpClient CreateShopeeClient(this IHttpClientFactory httpClientFactory) =>
+        internal static HttpClient CreateShopeeClient(this IHttpClientFactory httpClientFactory) =>
             httpClientFactory.CreateClient(HTTP_CLIENT_NAME);
 
-        public static IServiceCollection AddShopeeAPIv2(this IServiceCollection services)
+        public static IHttpClientBuilder AddShopeeHttpClient(this IServiceCollection services)
         {
             /*
             services
@@ -19,8 +19,11 @@ namespace Light.Shopee
                 //.AddHttpMessageHandler<SignUrlHandler>();
             */
 
-            services.AddHttpClient(HTTP_CLIENT_NAME);
+            return services.AddHttpClient(HTTP_CLIENT_NAME);
+        }
 
+        public static IServiceCollection AddShopeeAPIv2(this IServiceCollection services)
+        {
             services.AddScoped<IOrderClient, OrderClient>();
             services.AddScoped<IReturnsClient, ReturnsClient>();
             services.AddScoped<IProductClient, ProductClient>();

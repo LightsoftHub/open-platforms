@@ -7,7 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddScoped<IShopeeCredential, ShopeeCredentialProvider>();
+builder.Services.AddSingleton<IShopeeCredential, ShopeeCredentialProvider>();
+
+builder.Services.AddShopeeHttpClient();
 builder.Services.AddShopeeAPIv2();
 
 var app = builder.Build();
