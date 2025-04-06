@@ -4,54 +4,63 @@ namespace Light.Shopee.Models
 {
     public interface IShopeeResult
     {
-        string error { get; }
-        string message { get; }
-        string request_id { get; }
-        bool succeeded { get; }
-        string warning { get; }
+        string Error { get; }
+
+        string Message { get; }
+
+        string RequestId { get; }
+
+        bool Succeeded { get; }
+
+        string Warning { get; }
     }
 
     public interface IShopeeResult<T> : IShopeeResult
     {
-        T response { get; }
+        T Response { get; }
     }
 
     public class ShopeeResult : IShopeeResult
     {
         [JsonPropertyOrder(-1)]
-        public string error { get; set; }
+        [JsonPropertyName("error")]
+        public string Error { get; set; }
 
         [JsonPropertyOrder(-1)]
-        public string message { get; set; }
+        [JsonPropertyName("message")]
+        public string Message { get; set; }
 
         [JsonPropertyOrder(-1)]
-        public string warning { get; set; }
+        [JsonPropertyName("warning")]
+        public string Warning { get; set; }
 
         [JsonPropertyOrder(-1)]
-        public string request_id { get; set; }
+        [JsonPropertyName("request_id")]
+        public string RequestId { get; set; }
 
         [JsonPropertyOrder(-1)]
-        public bool succeeded => string.IsNullOrEmpty(error) && string.IsNullOrEmpty(message);
+        public bool Succeeded => string.IsNullOrEmpty(Error) && string.IsNullOrEmpty(Message);
 
         public static IShopeeResult Failed(string message)
         {
             return new ShopeeResult
             {
-                error = "error.manual",
-                message = message
+                Error = "error.manual",
+                Message = message
             };
         }
     }
 
     public class ShopeeResult<T> : ShopeeResult, IShopeeResult<T>
     {
-        public T response { get; set; }
+        [JsonPropertyName("response")]
+        public T Response { get; set; }
 
         public static IShopeeResult<T> Success(T data)
         {
             return new ShopeeResult<T>
             {
-                response = data,
+                Response = data,
             };
         }
 
@@ -59,8 +68,8 @@ namespace Light.Shopee.Models
         {
             return new ShopeeResult<T>
             {
-                error = "error.manual",
-                message = message
+                Error = "error.manual",
+                Message = message
             };
         }
     }

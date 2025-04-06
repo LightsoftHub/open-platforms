@@ -119,7 +119,7 @@ namespace Light.Shopee
             else if (responseContentType.Contains("application/json"))
             {
                 var errorResult = await response.Read();
-                return ShopeeResult<string>.Failed(errorResult.message);
+                return ShopeeResult<string>.Failed(errorResult.Message);
             }
 
             return ShopeeResult<string>.Failed($"Error when read response Content-Type is: {responseContentType}");
