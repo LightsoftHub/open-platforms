@@ -12,10 +12,14 @@ namespace Light.Shopee
 
         public static IServiceCollection AddShopeeAPIv2(this IServiceCollection services)
         {
+            /*
             services
-                .AddTransient<SignUrlHandler>()
-                .AddHttpClient(HTTP_CLIENT_NAME)
-                .AddHttpMessageHandler<SignUrlHandler>();
+                //.AddTransient<SignUrlHandler>()
+                .AddHttpClient(HTTP_CLIENT_NAME);
+                //.AddHttpMessageHandler<SignUrlHandler>();
+            */
+
+            services.AddHttpClient(HTTP_CLIENT_NAME);
 
             services.AddScoped<IOrderClient, OrderClient>();
             services.AddScoped<IReturnsClient, ReturnsClient>();
