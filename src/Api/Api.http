@@ -1,0 +1,64 @@
+@Api_HostAddress = http://localhost:5266
+@Ordersn = 250404DFDFH0E7
+@Returnsn = 2504050EAC5KJ44
+@ProductId = 5120130578
+
+### Get Categories
+GET {{Api_HostAddress}}/categories
+Accept: application/json
+
+### Get Products
+GET {{Api_HostAddress}}/products
+Accept: application/json
+
+### Get Product
+GET {{Api_HostAddress}}/product/{{ProductId}}
+Accept: application/json
+
+### Get Product models
+GET {{Api_HostAddress}}/product/{{ProductId}}/models
+Accept: application/json
+
+### Get Orders
+GET {{Api_HostAddress}}/orders
+Accept: application/json
+
+### Get Order details
+GET {{Api_HostAddress}}/order/{{Ordersn}}
+Accept: application/json
+
+### Get Order escrow details
+GET {{Api_HostAddress}}/payment/{{Ordersn}}
+Accept: application/json
+
+### Get Returns
+GET {{Api_HostAddress}}/returns
+Accept: application/json
+
+### Get Returns details
+GET {{Api_HostAddress}}/return/{{Returnsn}}
+Accept: application/json
+
+###
+GET {{Api_HostAddress}}/logistics/get_address_list
+Accept: application/json
+
+###
+GET {{Api_HostAddress}}/logistics/{{ordersn}}/shipping_parameter
+Accept: application/json
+
+###
+GET {{Api_HostAddress}}/logistics/{{ordersn}}/tracking_number
+Accept: application/json
+
+###
+GET {{Api_HostAddress}}/logistics/{{ordersn}}/tracking_info
+Accept: application/json
+
+###
+GET {{Api_HostAddress}}/logistics/{{ordersn}}/download_awb
+Accept: application/json
+
+###
+GET {{Api_HostAddress}}/public/get_ip_ranges
+Accept: application/json
