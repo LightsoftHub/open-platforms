@@ -4,43 +4,30 @@ namespace Light.Shopee.Models.Shop
 {
     public class WarehouseDetailResponse
     {
-        [JsonPropertyName("warehouse_id")]
-        public long WarehouseId { get; set; }
+        public long warehouse_id { get; set; }
 
-        [JsonPropertyName("warehouse_name")]
-        public string WarehouseName { get; set; }
+        public string warehouse_name { get; set; }
 
-        [JsonPropertyName("location_id")]
-        public string LocationId { get; set; }
+        public string location_id { get; set; }
 
-        [JsonPropertyName("address_id")]
-        public long AddressId { get; set; }
+        public long address_id { get; set; }
 
-        [JsonPropertyName("region")]
-        public string Region { get; set; }
+        public string region { get; set; }
 
-        [JsonPropertyName("state")]
-        public string State { get; set; }
+        public string state { get; set; }
 
-        [JsonPropertyName("city")]
-        public string City { get; set; }
+        public string city { get; set; }
 
-        [JsonPropertyName("district")]
-        public string District { get; set; }
+        public string district { get; set; }
 
-        [JsonPropertyName("town")]
-        public string Town { get; set; }
+        public string town { get; set; }
 
-        [JsonPropertyName("address")]
-        public string Address { get; set; }
+        public string address { get; set; }
 
-        [JsonPropertyName("zipcode")]
-        public string Zipcode { get; set; }
+        public string zipcode { get; set; }
 
-        [JsonPropertyName("state_code")]
-        public string StateCode { get; set; }
+        public string state_code { get; set; }
 
-        [JsonPropertyName("holiday_mode_state")]
-        public int HolidayModeState { get; set; }
+        public int holiday_mode_state { get; set; }
     }
 }
