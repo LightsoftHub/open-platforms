@@ -9,8 +9,8 @@
 	<Authors>minhvu</Authors>
 	<Description>Package contains common Shopee data definition.</Description>
 	<Summary>Package contains common Shopee data definition.</Summary>
-	<Version>0.0.0.1-preview5</Version>
-	<PackageTags>light;framework</PackageTags>
+	<Version>0.0.0.1-preview6</Version>
+	<PackageTags>lightframework</PackageTags>
 	<PackageIcon>icon.png</PackageIcon>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<PublishRepositoryUrl>true</PublishRepositoryUrl>

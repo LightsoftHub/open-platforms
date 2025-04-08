@@ -13,10 +13,10 @@ namespace Light.Shopee
         public static IHttpClientBuilder AddShopeeHttpClient(this IServiceCollection services)
         {
             /*
-            services
-                //.AddTransient<SignUrlHandler>()
-                .AddHttpClient(HTTP_CLIENT_NAME);
-                //.AddHttpMessageHandler<SignUrlHandler>();
+            return services
+                    .AddTransient<SignUrlHandler>()
+                    .AddHttpClient(HTTP_CLIENT_NAME)
+                    .AddHttpMessageHandler<SignUrlHandler>();
             */
 
             return services.AddHttpClient(HTTP_CLIENT_NAME);
