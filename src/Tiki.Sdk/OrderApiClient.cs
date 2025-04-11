@@ -27,7 +27,7 @@ namespace Light.Tiki
                 url += $"&updated_to_date={updatedToDate:yyyy-MM-dd HH:mm:ss}";
             }
 
-            return await GetAsync<OrderList>(url);
+            return await TryGetAsync<OrderList>(url);
         }
 
         public async Task<Result<Order>> GetOrderDetails(string orderId)
@@ -36,14 +36,14 @@ namespace Light.Tiki
             // Include-able fields: status_histories, item.fees, item.confirmation_histories
             url += "?include=status_histories,item.fees,item.confirmation_histories";
 
-            return await GetAsync<Order>(url);
+            return await TryGetAsync<Order>(url);
         }
 
         public async Task<Result<ExpectedPickupTime>> GetExpectedPickupTimes()
         {
             var url = "integration/v2/orders/dropship/expected-pickup-slots";
 
-            return await GetAsync<ExpectedPickupTime>(url);
+            return await TryGetAsync<ExpectedPickupTime>(url);
         }
 
         public async Task<Result> ConfirmEnoughStockForDropShipping(string orderCode, bool accept, long sellerInventoryId, string expectedPickupTime)
@@ -57,14 +57,14 @@ namespace Light.Tiki
                 expected_pickup_time = expectedPickupTime
             };
 
-            return await PostAsJsonAsync(url, request);
+            return await TryPostAsync(url, request);
         }
 
         public async Task<Result<ShippingStamp>> GetShippingStamp(string orderCode)
         {
             var url = $"integration/v2/orders/{orderCode}/dropship/labels";
 
-            return await GetAsync<ShippingStamp>(url);
+            return await TryGetAsync<ShippingStamp>(url);
         }
     }
 }

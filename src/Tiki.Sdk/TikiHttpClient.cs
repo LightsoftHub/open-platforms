@@ -8,22 +8,26 @@ namespace Light.Tiki
 {
     public abstract class TikiHttpClient
     {
-        private readonly HttpClient _httpClient;
+        private readonly IHttpClientFactory _httpClientFactory;
 
         public TikiHttpClient(IHttpClientFactory httpClientFactory)
         {
-            _httpClient = httpClientFactory.CreateTikiClient();
+            _httpClientFactory = httpClientFactory;
         }
 
-        protected async Task<Result<T>> GetAsync<T>(string url, CancellationToken cancellationToken = default)
+        protected async Task<Result<T>> TryGetAsync<T>(string url, CancellationToken cancellationToken = default)
         {
+            var _httpClient = _httpClientFactory.CreateTikiClient();
+
             var res = await _httpClient.GetAsync(url, cancellationToken);
 
             return await res.ToResult<T>();
         }
 
-        protected async Task<Result> PostAsJsonAsync(string url, object data, CancellationToken cancellationToken = default)
+        protected async Task<Result> TryPostAsync(string url, object data, CancellationToken cancellationToken = default)
         {
+            var _httpClient = _httpClientFactory.CreateTikiClient();
+
             var res = await _httpClient.PostAsJsonAsync(url, data, cancellationToken);
 
             return await res.ToResult();
@@ -31,22 +35,16 @@ namespace Light.Tiki
 
         protected async Task<HttpResponseMessage> PutAsJsonAsync(string url, object data, CancellationToken cancellationToken = default)
         {
+            var _httpClient = _httpClientFactory.CreateTikiClient();
+
             return await _httpClient.PutAsJsonAsync(url, data, cancellationToken);
         }
 
-        protected async Task<HttpResponseMessage> DeleteAsync(string url, CancellationToken cancellationToken = default)
+        protected Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken = default)
         {
-            return await _httpClient.DeleteAsync(url, cancellationToken);
-        }
+            var _httpClient = _httpClientFactory.CreateTikiClient();
 
-        protected async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken = default)
-        {
-            return await _httpClient.SendAsync(request, cancellationToken);
-        }
-
-        protected async Task<HttpResponseMessage> PostAsync(string url, HttpContent content, CancellationToken cancellationToken = default)
-        {
-            return await _httpClient.PostAsync(url, content, cancellationToken);
+            return _httpClient.SendAsync(request, cancellationToken);
         }
     }
 }

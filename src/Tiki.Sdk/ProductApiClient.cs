@@ -23,7 +23,7 @@ namespace Light.Tiki
             if (updateFrom.HasValue)
                 url += $"&updated_from_date={updateFrom:yyyy-MM-dd HH:mm:ss}";
 
-            return await GetAsync<ProductsList>(url);
+            return await TryGetAsync<ProductsList>(url);
         }
 
         public async Task<Result> UpdateQuantity(long productId, WarehouseQtyRequest[] warehouses)
