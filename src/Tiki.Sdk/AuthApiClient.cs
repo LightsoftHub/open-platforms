@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace Light.Tiki
 {
-    public class AuthApiClient : TikiHttpClient, IAuthClient
+    public class AuthApiClient : IAuthClient
     {
-        public AuthApiClient(IHttpClientFactory httpClientFactory) : base(httpClientFactory)
+        private readonly HttpClient _httpClient;
+        
+        public AuthApiClient(IHttpClientFactory httpClientFactory)
         {
+            _httpClient = httpClientFactory.CreateTikiClient();
         }
 
         public async Task<Result<AccessTokenResponse>> GetTokenAsync(string clientId, string clientSecret)
@@ -25,7 +28,7 @@ namespace Light.Tiki
         });
 
             var req = new HttpRequestMessage(HttpMethod.Post, url) { Content = requestContent };
-            var res = await SendAsync(req);
+            var res = await _httpClient.SendAsync(req);
 
             var responseStr = await res.Content.ReadAsStringAsync();
 
