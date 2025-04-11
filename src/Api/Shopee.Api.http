@@ -1,4 +1,4 @@
-@Api_HostAddress = http://localhost:5266
+@Api_HostAddress = http://localhost:5266/shopee
 @Ordersn = 250404DFDFH0E7
 @Returnsn = 2504050EAC5KJ44
 @ProductId = 5120130578

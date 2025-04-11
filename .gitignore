@@ -401,3 +401,6 @@ FodyWeavers.xsd
 
 # Mac OS
 *.DS_Store
+
+# Project Owned
+*CredentialProvider.cs*

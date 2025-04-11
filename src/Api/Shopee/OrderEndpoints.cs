@@ -3,7 +3,7 @@ using Light.Shopee.Models.Order;
 using Light.Shopee.Models.Returns;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api;
+namespace Api.Shopee;
 
 public static class OrderEndpoints
 {

@@ -1,6 +1,6 @@
 ﻿using Light.Shopee;
 
-namespace Api;
+namespace Api.Shopee;
 
 public static class PublicEndpoints
 {

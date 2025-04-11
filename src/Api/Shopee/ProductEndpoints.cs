@@ -2,7 +2,7 @@
 using Light.Shopee.Models.Product;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api;
+namespace Api.Shopee;
 
 public static class ProductEndpoints
 {

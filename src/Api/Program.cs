@@ -1,5 +1,4 @@
-using Api;
-using Light.Shopee;
+using Api.Shopee;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,10 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddScoped<IShopeeCredential, ShopeeCredentialProvider>();
-
-builder.Services.AddShopeeHttpClient();
-builder.Services.AddShopeeAPIv2();
+// Open Platforms API
+builder.Services.AddShopee();
 
 var app = builder.Build();
 
@@ -22,11 +19,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapProductEndpoints();
-app.MapOrderEndpoints();
-app.MapPaymentEndpoints();
-app.MapReturnEndpoints();
-app.MapLogisticsEndpoints();
-app.MapPublicEndpoints();
+// Open Platforms API
+app.MapShopee();
 
 app.Run();

@@ -1,7 +1,7 @@
 ﻿using Light.Shopee;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api;
+namespace Api.Shopee;
 
 public static class LogisticsEndpoints
 {
