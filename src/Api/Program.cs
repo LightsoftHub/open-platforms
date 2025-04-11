@@ -1,5 +1,6 @@
 using Api.Lazada;
 using Api.Shopee;
+using Api.Tiki;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddOpenApi();
 // Open Platforms API
 builder.Services.AddShopee();
 builder.Services.AddLazada();
+builder.Services.AddTiki();
 
 var app = builder.Build();
 
@@ -24,5 +26,6 @@ app.UseHttpsRedirection();
 // Open Platforms API
 app.MapShopee();
 app.MapLazada();
+app.MapTiki();
 
 app.Run();
