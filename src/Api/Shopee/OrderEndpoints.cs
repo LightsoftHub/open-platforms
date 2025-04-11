@@ -15,15 +15,13 @@ public static class OrderEndpoints
                 var request = new GetOrderListRequest(DateTime.Today, DateTime.Now);
 
                 return orderClient.GetOrderList(request);
-            })
-            .WithName("GetOrders");
+            });
 
         endpoint
             .MapGet("/order/{ordersn}", ([FromRoute] string ordersn, IOrderClient orderClient) =>
             {
                 return orderClient.GetOrderDetails([ordersn]);
-            })
-            .WithName("GetOrderDetails");
+            });
     }
 
     public static void MapReturnEndpoints(this IEndpointRouteBuilder endpoint)
@@ -35,15 +33,13 @@ public static class OrderEndpoints
                 request.ByCreateTime(DateTime.Now.AddDays(-15), DateTime.Now);
 
                 return client.GetReturnList(request);
-            })
-            .WithName("GetReturns");
+            });
 
         endpoint
             .MapGet("/return/{returnsn}", ([FromRoute] string returnsn, IReturnsClient orderClient) =>
             {
                 return orderClient.GetReturnDetail(returnsn);
-            })
-            .WithName("GetReturnDetail");
+            });
     }
 
     public static void MapPaymentEndpoints(this IEndpointRouteBuilder endpoint)
@@ -52,7 +48,6 @@ public static class OrderEndpoints
             .MapGet("/payment/{ordersn}/", ([FromRoute] string ordersn, IPaymentClient client) =>
             {
                 return client.GetEscrowDetail(ordersn);
-            })
-            .WithName("GetEscrowDetail");
+            });
     }
 }

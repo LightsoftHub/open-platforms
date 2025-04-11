@@ -1,3 +1,4 @@
+using Api.Lazada;
 using Api.Shopee;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ builder.Services.AddOpenApi();
 
 // Open Platforms API
 builder.Services.AddShopee();
+builder.Services.AddLazada();
 
 var app = builder.Build();
 
@@ -21,5 +23,6 @@ app.UseHttpsRedirection();
 
 // Open Platforms API
 app.MapShopee();
+app.MapLazada();
 
 app.Run();

@@ -10,7 +10,6 @@ public static class PublicEndpoints
             .MapGet("/public/get_ip_ranges", (IPublicClient client) =>
             {
                 return client.GetShopeeIpRanges();
-            })
-            .WithName("GetIpRanges");
+            });
     }
 }
