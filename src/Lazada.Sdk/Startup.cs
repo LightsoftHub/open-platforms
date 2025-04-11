@@ -5,7 +5,7 @@ namespace Light.Lazada
 {
     public static class Startup
     {
-        private const string HTTP_CLIENT_NAME = "LazadaApiReference";
+        private const string HTTP_CLIENT_NAME = "LazadaApi";
 
         public static HttpClient CreateLazClient(this IHttpClientFactory httpClientFactory)
         {

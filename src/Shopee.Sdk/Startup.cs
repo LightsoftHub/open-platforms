@@ -5,7 +5,7 @@ namespace Light.Shopee
 {
     public static class Startup
     {
-        private const string HTTP_CLIENT_NAME = "ShopeeApiReference";
+        private const string HTTP_CLIENT_NAME = "ShopeeApi";
 
         internal static HttpClient CreateShopeeClient(this IHttpClientFactory httpClientFactory) =>
             httpClientFactory.CreateClient(HTTP_CLIENT_NAME);

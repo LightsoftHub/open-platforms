@@ -6,7 +6,7 @@ public static class DependencyInjection
 {
     public static void AddTiki(this IServiceCollection services)
     {
-        services.AddScoped<ITikiCredential, CredentialProvider>();
+        services.AddScoped<ITikiCredential, TikiCredentialProvider>();
 
         services.AddTikiHttpClient();
         services.AddTikiAPI();

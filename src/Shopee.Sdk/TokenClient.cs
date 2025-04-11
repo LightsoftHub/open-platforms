@@ -13,7 +13,7 @@ namespace Light.Shopee
 
         public TokenClient(IHttpClientFactory httpClientFactory)
         {
-            _httpClient = httpClientFactory.CreateShopeeClient();
+            _httpClient = httpClientFactory.CreateClient("ShopeeAuth");
         }
 
         public string GetAuthUrl(ShopeeAuthCredential credential, string redirectUrl)

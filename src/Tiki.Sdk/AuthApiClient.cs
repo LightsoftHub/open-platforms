@@ -10,7 +10,7 @@ namespace Light.Tiki
     public class AuthApiClient : IAuthClient
     {
         private readonly HttpClient _httpClient;
-        
+
         public AuthApiClient(IHttpClientFactory httpClientFactory)
         {
             _httpClient = httpClientFactory.CreateTikiClient();
@@ -22,10 +22,10 @@ namespace Light.Tiki
 
             var requestContent = new FormUrlEncodedContent(new[]
             {
-            new KeyValuePair<string, string>("client_id", clientId),
-            new KeyValuePair<string, string>("client_secret", clientSecret),
-            new KeyValuePair<string, string>("grant_type", "client_credentials"),
-        });
+                new KeyValuePair<string, string>("client_id", clientId),
+                new KeyValuePair<string, string>("client_secret", clientSecret),
+                new KeyValuePair<string, string>("grant_type", "client_credentials"),
+            });
 
             var req = new HttpRequestMessage(HttpMethod.Post, url) { Content = requestContent };
             var res = await _httpClient.SendAsync(req);

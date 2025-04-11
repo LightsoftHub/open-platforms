@@ -6,7 +6,7 @@ public static class DependencyInjection
 {
     public static void AddLazada(this IServiceCollection services)
     {
-        services.AddScoped<ILazadaCredential, CredentialProvider>();
+        services.AddScoped<ILazadaCredential, LazadaCredentialProvider>();
 
         services.AddLazadaHttpClient();
         services.AddLazadaAPI();

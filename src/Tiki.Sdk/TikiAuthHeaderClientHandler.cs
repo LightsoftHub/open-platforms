@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Light.Tiki
 {
-    internal class TikiAuthHeaderClientHandler : DelegatingHandler
+    public class TikiAuthHeaderClientHandler : DelegatingHandler
     {
         private readonly ITikiCredential _credential;
 

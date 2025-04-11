@@ -14,7 +14,7 @@ namespace Light.Lazada
 
         public AuthClient(IHttpClientFactory httpClientFactory)
         {
-            _httpClient = httpClientFactory.CreateLazClient();
+            _httpClient = httpClientFactory.CreateClient("LazadaAuth");
         }
 
         public async Task<TokenResponse> GetTokenAsync(LazadaApiCredential parameters, string authCode)

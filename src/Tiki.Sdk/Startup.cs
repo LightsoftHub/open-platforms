@@ -6,7 +6,7 @@ namespace Light.Tiki
 {
     public static class Startup
     {
-        private const string HTTP_CLIENT_NAME = "TikiApiReference";
+        private const string HTTP_CLIENT_NAME = "TikiApi";
 
         internal static HttpClient CreateTikiClient(this IHttpClientFactory httpClientFactory) =>
             httpClientFactory.CreateClient(HTTP_CLIENT_NAME);
