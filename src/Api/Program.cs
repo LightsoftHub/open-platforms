@@ -1,3 +1,4 @@
+using Api.GrabMart;
 using Api.Lazada;
 using Api.Shopee;
 using Api.Tiki;
@@ -12,6 +13,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddShopee();
 builder.Services.AddLazada();
 builder.Services.AddTiki();
+builder.Services.AddGrabMart();
 
 var app = builder.Build();
 
@@ -27,5 +29,6 @@ app.UseHttpsRedirection();
 app.MapShopee();
 app.MapLazada();
 app.MapTiki();
+app.MapGrabMart();
 
 app.Run();
