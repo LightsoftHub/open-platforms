@@ -41,6 +41,11 @@ namespace Light.Tiki
                 }
             }
 
+            if (string.IsNullOrEmpty(responseStr))
+            {
+                return Result<AccessTokenResponse>.Error($"{(int)res.StatusCode} {res.StatusCode}: Empty response");
+            }
+
             var error = JsonSerializer.Deserialize<ErrorResult>(responseStr);
             if (error != null)
             {

@@ -9,7 +9,7 @@
 	<Authors>minhvu</Authors>
 	<Description>Package contains GrabMart api reference implements.</Description>
 	<Summary>Package contains common GrabMart api reference implements.</Summary>
-	<Version>0.0.0.1-beta1</Version>
+	<Version>0.0.0.1</Version>
 	<PackageTags>lightframework</PackageTags>
 	<PackageIcon>icon.png</PackageIcon>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
