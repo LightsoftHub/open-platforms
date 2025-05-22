@@ -1,4 +1,4 @@
-name: Publish GrabMart to Nuget.org
+name: Publish Grab to Nuget.org
 
 on:
   workflow_dispatch
