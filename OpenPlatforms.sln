@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabMart.Core", "src\GrabMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabMart.Sdk", "src\GrabMart.Sdk\GrabMart.Sdk.csproj", "{0273F8F6-027A-D811-8A8E-928278C1BA55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grab.Auth", "src\Grab.Auth\Grab.Auth.csproj", "{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{0273F8F6-027A-D811-8A8E-928278C1BA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0273F8F6-027A-D811-8A8E-928278C1BA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0273F8F6-027A-D811-8A8E-928278C1BA55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +105,7 @@ Global
 		{42485B58-D963-4C9F-B647-3104DD4AB49C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{185B97A7-222C-F955-6DD5-6D40ED3A02DF} = {42485B58-D963-4C9F-B647-3104DD4AB49C}
 		{0273F8F6-027A-D811-8A8E-928278C1BA55} = {42485B58-D963-4C9F-B647-3104DD4AB49C}
+		{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32} = {42485B58-D963-4C9F-B647-3104DD4AB49C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41E98D4C-1CAC-46CC-BE5C-0242D5CE7C91}
