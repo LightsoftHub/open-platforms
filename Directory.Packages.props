@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+    <AspnetVersion>9.0.5</AspnetVersion>
+  </PropertyGroup>
+  <ItemGroup>
+	<PackageVersion Include="Lightsoft.Result" Version="0.0.0.13" />
+	<PackageVersion Include="Microsoft.Extensions.Http" Version="$(AspnetVersion)" />
+	<PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+	<PackageVersion Include="System.Text.Json" Version="$(AspnetVersion)" />
+	<PackageVersion Include="System.Net.Http.Json" Version="$(AspnetVersion)" />
+  </ItemGroup>
+</Project>

@@ -16,7 +16,7 @@ namespace Light.GrabMart
         public static HttpClient CreateGrabMartAuthClient(this IHttpClientFactory httpClientFactory)
             => httpClientFactory.CreateClient(GRABMART_AUTH_CLIENT_NAME);
 
-        public static IHttpClientBuilder AddGrabMartAuthHttpClient(this IServiceCollection services, string baseAddress= "https://api.grab.com")
+        public static IHttpClientBuilder AddGrabMartAuthHttpClient(this IServiceCollection services, string baseAddress = "https://api.grab.com")
         {
             return services
                 .AddHttpClient(GRABMART_AUTH_CLIENT_NAME, client =>
