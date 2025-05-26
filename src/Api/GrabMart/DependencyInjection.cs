@@ -1,4 +1,5 @@
-﻿using Light.GrabMart;
+﻿using Light.Grab.Auth;
+using Light.GrabMart;
 
 namespace Api.GrabMart;
 
@@ -6,9 +7,9 @@ public static class DependencyInjection
 {
     public static void AddGrabMart(this IServiceCollection services)
     {
-        services.AddScoped<IGrabCredential, CredentialProvider>();
+        services.AddScoped<IGrabMartCredential, CredentialProvider>();
 
-        services.AddGrabMartAuthHttpClient();
+        services.AddGrabAuthHttpClient("");
         services.AddGrabMartHttpClient();
         services.AddGrabAPI();
     }

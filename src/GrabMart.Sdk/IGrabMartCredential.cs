@@ -2,7 +2,7 @@
 
 namespace Light.GrabMart
 {
-    public interface IGrabCredential
+    public interface IGrabMartCredential
     {
         string Environment { get; }
 

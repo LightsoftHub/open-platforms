@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Grab.Auth\Grab.Auth.csproj" />
     <ProjectReference Include="..\GrabMart.Sdk\GrabMart.Sdk.csproj" />
     <ProjectReference Include="..\Lazada.Sdk\Lazada.Sdk.csproj" />
     <ProjectReference Include="..\Shopee.Sdk\Shopee.Sdk.csproj" />

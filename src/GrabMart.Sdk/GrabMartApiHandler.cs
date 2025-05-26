@@ -8,9 +8,9 @@ namespace Light.GrabMart
 {
     public class GrabMartApiHandler : DelegatingHandler
     {
-        private readonly IGrabCredential _credential;
+        private readonly IGrabMartCredential _credential;
 
-        public GrabMartApiHandler(IGrabCredential credential)
+        public GrabMartApiHandler(IGrabMartCredential credential)
         {
             _credential = credential;
         }
