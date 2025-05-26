@@ -33,5 +33,10 @@ namespace Light.GrabSdk.GrabExpress
         {
             return _httpClient.DeleteAsync(url, cancellationToken);
         }
+
+        protected Task<T> GetAsync<T>(string url, CancellationToken cancellationToken = default)
+        {
+            return _httpClient.GetAsync(url, cancellationToken);
+        }
     }
 }
