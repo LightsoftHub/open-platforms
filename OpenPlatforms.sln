@@ -42,6 +42,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabSdk.GrabMart", "src\Gra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabSdk.Auth", "src\GrabSdk.Auth\GrabSdk.Auth.csproj", "{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabSdk.GrabExpress.Core", "src\GrabSdk.GrabExpress.Core\GrabSdk.GrabExpress.Core.csproj", "{2837CA1C-EFAE-741F-2159-BD9295BFD253}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabSdk.GrabExpress", "src\GrabSdk.GrabExpress\GrabSdk.GrabExpress.csproj", "{45F0F5EC-88D2-3C3C-0B21-BA1E0F560A87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +92,14 @@ Global
 		{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2837CA1C-EFAE-741F-2159-BD9295BFD253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2837CA1C-EFAE-741F-2159-BD9295BFD253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2837CA1C-EFAE-741F-2159-BD9295BFD253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2837CA1C-EFAE-741F-2159-BD9295BFD253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45F0F5EC-88D2-3C3C-0B21-BA1E0F560A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F0F5EC-88D2-3C3C-0B21-BA1E0F560A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F0F5EC-88D2-3C3C-0B21-BA1E0F560A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F0F5EC-88D2-3C3C-0B21-BA1E0F560A87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +119,8 @@ Global
 		{185B97A7-222C-F955-6DD5-6D40ED3A02DF} = {42485B58-D963-4C9F-B647-3104DD4AB49C}
 		{0273F8F6-027A-D811-8A8E-928278C1BA55} = {42485B58-D963-4C9F-B647-3104DD4AB49C}
 		{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32} = {42485B58-D963-4C9F-B647-3104DD4AB49C}
+		{2837CA1C-EFAE-741F-2159-BD9295BFD253} = {42485B58-D963-4C9F-B647-3104DD4AB49C}
+		{45F0F5EC-88D2-3C3C-0B21-BA1E0F560A87} = {42485B58-D963-4C9F-B647-3104DD4AB49C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41E98D4C-1CAC-46CC-BE5C-0242D5CE7C91}
