@@ -18,22 +18,22 @@ jobs:
 
     - name: Install dependencies
       run: |
-        dotnet restore src/Grab.Auth/Grab.Auth.csproj
-        dotnet restore src/GrabMart.Core/GrabMart.Core.csproj
-        dotnet restore src/GrabMart.Sdk/GrabMart.Sdk.csproj
+        dotnet restore src/GrabSdk.Auth/GrabSdk.Auth.csproj
+        dotnet restore src/GrabSdk.GrabMart.Core/GrabSdk.GrabMart.Core.csproj
+        dotnet restore src/GrabSdk.GrabMart/GrabSdk.GrabMart.csproj
 
     - name: Build
       run: |
-        dotnet build src/Grab.Auth/Grab.Auth.csproj --configuration Release --no-restore
-        dotnet build src/GrabMart.Core/GrabMart.Core.csproj --configuration Release --no-restore
-        dotnet build src/GrabMart.Sdk/GrabMart.Sdk.csproj --configuration Release --no-restore
+        dotnet build src/GrabSdk.Auth/GrabSdk.Auth.csproj --configuration Release --no-restore
+        dotnet build src/GrabSdk.GrabMart.Core/GrabSdk.GrabMart.Core.csproj --configuration Release --no-restore
+        dotnet build src/GrabSdk.GrabMart/GrabSdk.GrabMart.csproj --configuration Release --no-restore
 
     - name: Publish to Nuget.org
       run: |
         rm -rf nuget/
 
-        dotnet pack --no-build src/Grab.Auth/Grab.Auth.csproj --configuration Release --output nuget
-        dotnet pack --no-build src/GrabMart.Core/GrabMart.Core.csproj --configuration Release --output nuget
-        dotnet pack --no-build src/GrabMart.Sdk/GrabMart.Sdk.csproj --configuration Release --output nuget
+        dotnet pack --no-build src/GrabSdk.Auth/GrabSdk.Auth.csproj --configuration Release --output nuget
+        dotnet pack --no-build src/GrabSdk.GrabMart.Core/GrabSdk.GrabMart.Core.csproj --configuration Release --output nuget
+        dotnet pack --no-build src/GrabSdk.GrabMart/GrabSdk.GrabMart.csproj --configuration Release --output nuget
 
         dotnet nuget push nuget/*.nupkg -k '${{ secrets.NUGET_API_KEY }}' --skip-duplicate -s https://api.nuget.org/v3/index.json

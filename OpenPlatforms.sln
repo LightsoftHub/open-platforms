@@ -36,11 +36,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiki.Sdk", "src\Tiki.Sdk\Ti
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Grab", "Grab", "{42485B58-D963-4C9F-B647-3104DD4AB49C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabMart.Core", "src\GrabMart.Core\GrabMart.Core.csproj", "{185B97A7-222C-F955-6DD5-6D40ED3A02DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabSdk.GrabMart.Core", "src\GrabSdk.GrabMart.Core\GrabSdk.GrabMart.Core.csproj", "{185B97A7-222C-F955-6DD5-6D40ED3A02DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabMart.Sdk", "src\GrabMart.Sdk\GrabMart.Sdk.csproj", "{0273F8F6-027A-D811-8A8E-928278C1BA55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabSdk.GrabMart", "src\GrabSdk.GrabMart\GrabSdk.GrabMart.csproj", "{0273F8F6-027A-D811-8A8E-928278C1BA55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grab.Auth", "src\Grab.Auth\Grab.Auth.csproj", "{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabSdk.Auth", "src\GrabSdk.Auth\GrabSdk.Auth.csproj", "{1C59DC8D-6C79-41F2-8C5D-CD30EDB19F32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

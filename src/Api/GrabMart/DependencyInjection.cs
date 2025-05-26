@@ -1,5 +1,5 @@
-﻿using Light.Grab.Auth;
-using Light.GrabMart;
+﻿using Light.GrabSdk.Auth;
+using Light.GrabSdk.GrabMart;
 
 namespace Api.GrabMart;
 

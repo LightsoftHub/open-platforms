@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<RootNamespace>Light.GrabSdk.GrabMart</RootNamespace>
+	<AssemblyName>Lightsoft.GrabSdk.GrabMart</AssemblyName>
+	<Title>Lightsoft.GrabSdk.GrabMart</Title>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<Authors>minhvu</Authors>
+	<Description>Package contains GrabMart api reference implements.</Description>
+	<Summary>Package contains common GrabMart api reference implements.</Summary>
+	<Version>0.0.0.1-beta1</Version>
+	<PackageTags>lightframework</PackageTags>
+	<PackageIcon>icon.png</PackageIcon>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Microsoft.Extensions.Http" />
+	<PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+	<PackageReference Include="System.Net.Http.Json" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<None Include="..\..\icon.png" Pack="true" Visible="false" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GrabSdk.GrabMart.Core\GrabSdk.GrabMart.Core.csproj" />
+  </ItemGroup>
+
+</Project>
