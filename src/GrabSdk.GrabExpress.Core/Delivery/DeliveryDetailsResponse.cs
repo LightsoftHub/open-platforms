@@ -23,12 +23,6 @@ namespace Light.GrabSdk.GrabExpress.Delivery
         public AdvanceInfo advanceInfo { get; set; }
     }
 
-    public class EstimatedTimeline
-    {
-        public DateTime pickup { get; set; }
-        public DateTime dropoff { get; set; }
-    }
-
     public class Quote
     {
         public Service service { get; set; }

@@ -12,12 +12,6 @@ namespace Light.GrabSdk.GrabExpress.DeliveryQuotes
         public List<Package> packages { get; set; }
     }
 
-    public class EstimatedTimeline
-    {
-        public DateTime pickup { get; set; }
-        public DateTime dropoff { get; set; }
-    }
-
     public class Quote
     {
         public Service service { get; set; }

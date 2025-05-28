@@ -11,7 +11,7 @@ namespace Light.GrabSdk.GrabExpress
         public static HttpClient CreateGrabExpressClient(this IHttpClientFactory httpClientFactory)
             => httpClientFactory.CreateClient(GRABEXPRESS_CLIENT_NAME);
 
-        public static IHttpClientBuilder AddGrabMartHttpClient(this IServiceCollection services, string baseAddress)
+        public static IHttpClientBuilder AddGrabExpressHttpClient(this IServiceCollection services, string baseAddress)
         {
             return services
                 .AddTransient<GrabExpressApiHandler>()
@@ -24,7 +24,8 @@ namespace Light.GrabSdk.GrabExpress
 
         public static IServiceCollection AddGrabExpressAPI(this IServiceCollection services)
         {
-            
+            services.AddScoped<IDeliveryClient, DeliveryClient>();
+
             return services;
         }
     }

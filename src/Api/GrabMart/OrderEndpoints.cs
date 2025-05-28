@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.GrabMart;
 
-public static class OrderEndpoints
+public static class Endpoints
 {
     public static void MapOrderEndpoints(this IEndpointRouteBuilder endpoint)
     {

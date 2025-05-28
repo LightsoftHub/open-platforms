@@ -1,9 +1,8 @@
-﻿using Light.GrabSdk.GrabExpress.Delivery;
+﻿using Light.Contracts;
+using Light.GrabSdk.GrabExpress.Delivery;
 using Light.GrabSdk.GrabExpress.DeliveryQuotes;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Light.GrabSdk.GrabExpress
@@ -16,27 +15,37 @@ namespace Light.GrabSdk.GrabExpress
 
         public Task<GetDeliveryQuotesResponse> GetDeliveryQuotes(GetDeliveryQuotesRequest request)
         {
-            throw new NotImplementedException();
+            var path = "v1/deliveries/quotes";
+
+            return Post<GetDeliveryQuotesResponse>(path, request);
         }
 
         public Task<DeliveryDetailsResponse> CreateDeliveryRequest(CreateDeliveryRequest request)
         {
-            throw new NotImplementedException();
+            var path = "v1/deliveries";
+
+            return Post<DeliveryDetailsResponse>(path, request);
         }
 
         public Task<DeliveryDetailsResponse> GetDeliveryDetails(string deliveryID)
         {
-            throw new NotImplementedException();
+            var path = $"v1/deliveries/{deliveryID}";
+
+            return Get<DeliveryDetailsResponse>(path);
         }
 
-        public Task<bool> CancelDelivery(string deliveryID)
+        public Task<Result> CancelDelivery(string deliveryID)
         {
-            throw new NotImplementedException();
+            var path = $"v1/deliveries/{deliveryID}";
+
+            return TryDelete(path);
         }
 
-        public Task<bool> CancelDeliveryByMerchantOrderID(string merchantOrderID)
+        public Task<Result> CancelDeliveryByMerchantOrderID(string merchantOrderID)
         {
-            throw new NotImplementedException();
+            var path = $"v1/merchant/deliveries/{merchantOrderID}";
+
+            return TryDelete(path);
         }
     }
 }

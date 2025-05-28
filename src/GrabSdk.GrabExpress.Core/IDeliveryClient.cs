@@ -1,4 +1,5 @@
-﻿using Light.GrabSdk.GrabExpress.Delivery;
+﻿using Light.Contracts;
+using Light.GrabSdk.GrabExpress.Delivery;
 using Light.GrabSdk.GrabExpress.DeliveryQuotes;
 using System.Threading.Tasks;
 
@@ -16,9 +17,9 @@ namespace Light.GrabSdk.GrabExpress
         Task<DeliveryDetailsResponse> GetDeliveryDetails(string deliveryID);
 
         // https://developer.grab.com/docs/grab-express#cancel-delivery
-        Task<bool> CancelDelivery(string deliveryID);
+        Task<Result> CancelDelivery(string deliveryID);
 
         // https://developer.grab.com/docs/grab-express#cancel-delivery-by-merchant-order-id
-        Task<bool> CancelDeliveryByMerchantOrderID(string merchantOrderID);
+        Task<Result> CancelDeliveryByMerchantOrderID(string merchantOrderID);
     }
 }
