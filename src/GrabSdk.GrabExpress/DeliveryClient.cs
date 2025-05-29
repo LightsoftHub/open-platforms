@@ -1,7 +1,6 @@
 ﻿using Light.Contracts;
 using Light.GrabSdk.GrabExpress.Delivery;
 using Light.GrabSdk.GrabExpress.DeliveryQuotes;
-using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -13,25 +12,25 @@ namespace Light.GrabSdk.GrabExpress
         {
         }
 
-        public Task<GetDeliveryQuotesResponse> GetDeliveryQuotes(GetDeliveryQuotesRequest request)
+        public Task<Result<GetDeliveryQuotesResponse>> GetDeliveryQuotes(GetDeliveryQuotesRequest request)
         {
             var path = "v1/deliveries/quotes";
 
-            return Post<GetDeliveryQuotesResponse>(path, request);
+            return TryPost<GetDeliveryQuotesResponse>(path, request);
         }
 
-        public Task<DeliveryDetailsResponse> CreateDeliveryRequest(CreateDeliveryRequest request)
+        public Task<Result<DeliveryDetailsResponse>> CreateDeliveryRequest(CreateDeliveryRequest request)
         {
             var path = "v1/deliveries";
 
-            return Post<DeliveryDetailsResponse>(path, request);
+            return TryPost<DeliveryDetailsResponse>(path, request);
         }
 
-        public Task<DeliveryDetailsResponse> GetDeliveryDetails(string deliveryID)
+        public Task<Result<DeliveryDetailsResponse>> GetDeliveryDetails(string deliveryID)
         {
             var path = $"v1/deliveries/{deliveryID}";
 
-            return Get<DeliveryDetailsResponse>(path);
+            return TryGet<DeliveryDetailsResponse>(path);
         }
 
         public Task<Result> CancelDelivery(string deliveryID)
