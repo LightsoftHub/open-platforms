@@ -21,12 +21,16 @@ jobs:
         dotnet restore src/GrabSdk.Auth/GrabSdk.Auth.csproj
         dotnet restore src/GrabSdk.GrabMart.Core/GrabSdk.GrabMart.Core.csproj
         dotnet restore src/GrabSdk.GrabMart/GrabSdk.GrabMart.csproj
+        dotnet restore src/GrabSdk.GrabExpress.Core/GrabSdk.GrabExpress.Core.csproj
+        dotnet restore src/GrabSdk.GrabExpress/GrabSdk.GrabExpress.csproj
 
     - name: Build
       run: |
         dotnet build src/GrabSdk.Auth/GrabSdk.Auth.csproj --configuration Release --no-restore
         dotnet build src/GrabSdk.GrabMart.Core/GrabSdk.GrabMart.Core.csproj --configuration Release --no-restore
         dotnet build src/GrabSdk.GrabMart/GrabSdk.GrabMart.csproj --configuration Release --no-restore
+        dotnet build src/GrabSdk.GrabExpress.Core/GrabSdk.GrabExpress.Core.csproj --configuration Release --no-restore
+        dotnet build src/GrabSdk.GrabExpress/GrabSdk.GrabExpress.csproj --configuration Release --no-restore
 
     - name: Publish to Nuget.org
       run: |
@@ -35,5 +39,7 @@ jobs:
         dotnet pack --no-build src/GrabSdk.Auth/GrabSdk.Auth.csproj --configuration Release --output nuget
         dotnet pack --no-build src/GrabSdk.GrabMart.Core/GrabSdk.GrabMart.Core.csproj --configuration Release --output nuget
         dotnet pack --no-build src/GrabSdk.GrabMart/GrabSdk.GrabMart.csproj --configuration Release --output nuget
+        dotnet pack --no-build src/GrabSdk.GrabExpress.Core/GrabSdk.GrabExpress.Core.csproj --configuration Release --output nuget
+        dotnet pack --no-build src/GrabSdk.GrabExpress/GrabSdk.GrabExpress.csproj --configuration Release --output nuget
 
         dotnet nuget push nuget/*.nupkg -k '${{ secrets.NUGET_API_KEY }}' --skip-duplicate -s https://api.nuget.org/v3/index.json
