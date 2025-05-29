@@ -29,7 +29,7 @@ namespace Light.GrabSdk.GrabExpress.MultiStopDelivery.Create
 
     public class DestinationResponse : Destination
     {
-        public int amount { get; set; }
+        public double amount { get; set; }
         public EstimatedTimeline estimatedTimeline { get; set; }
         public string deliveryID { get; set; }
         public string status { get; set; }
