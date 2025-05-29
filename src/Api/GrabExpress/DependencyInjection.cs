@@ -75,7 +75,7 @@ public static class DependencyInjection
                 CreateMultiStopDeliveryRequest request,
                 IMultiStopDeliveryClient service) =>
             {
-                return service.GetQuotes(request);
+                return service.Create(request);
             });
     }
 }
