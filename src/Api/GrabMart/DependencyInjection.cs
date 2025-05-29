@@ -11,7 +11,7 @@ public static class DependencyInjection
 
         services.AddGrabAuthHttpClient("");
         services.AddGrabMartHttpClient();
-        services.AddGrabAPI();
+        services.AddGrabMartAPI();
     }
 
     public static void MapGrabMart(this IEndpointRouteBuilder endpoint)

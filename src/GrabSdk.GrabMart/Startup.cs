@@ -22,7 +22,7 @@ namespace Light.GrabSdk.GrabMart
                 .AddHttpMessageHandler<GrabMartApiHandler>();
         }
 
-        public static IServiceCollection AddGrabAPI(this IServiceCollection services)
+        public static IServiceCollection AddGrabMartAPI(this IServiceCollection services)
         {
             services.AddScoped<IMenuClient, MenuClient>();
             services.AddScoped<IOrderClient, OrderClient>();
