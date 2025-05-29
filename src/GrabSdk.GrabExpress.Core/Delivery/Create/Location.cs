@@ -1,6 +1,6 @@
 ﻿using Light.GrabSdk.GrabExpress.Common;
 
-namespace Light.GrabSdk.GrabExpress.Delivery
+namespace Light.GrabSdk.GrabExpress.Delivery.Create
 {
     public class Location
     {

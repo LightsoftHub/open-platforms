@@ -1,6 +1,6 @@
 ﻿using Light.Contracts;
-using Light.GrabSdk.GrabExpress.Delivery;
-using Light.GrabSdk.GrabExpress.DeliveryQuotes;
+using Light.GrabSdk.GrabExpress.Delivery.Create;
+using Light.GrabSdk.GrabExpress.Delivery.GetQuotes;
 using System.Threading.Tasks;
 
 namespace Light.GrabSdk.GrabExpress

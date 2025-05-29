@@ -1,7 +1,8 @@
 ﻿using Light.GrabSdk.GrabExpress;
-using Light.GrabSdk.GrabExpress.Delivery;
-using Light.GrabSdk.GrabExpress.DeliveryQuotes;
-using Light.Tiki.Models.Orders;
+using Light.GrabSdk.GrabExpress.Delivery.Create;
+using Light.GrabSdk.GrabExpress.Delivery.GetQuotes;
+using Light.GrabSdk.GrabExpress.MultiStopDelivery.Create;
+using Light.GrabSdk.GrabExpress.MultiStopDelivery.GetQuotes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.GrabExpress;
@@ -58,6 +59,23 @@ public static class DependencyInjection
                 IDeliveryClient deliveryClient) =>
             {
                 return deliveryClient.CancelDeliveryByMerchantOrderID(merchantOrderID);
+            });
+
+        // multi stop
+        group
+            .MapPost("partner/express/v1/deliveries/quotes", (
+                GetMultiStopDeliveryQuotesRequest request,
+                IMultiStopDeliveryClient service) =>
+            {
+                return service.GetQuotes(request);
+            });
+
+        group
+            .MapPost("partner/express/v1/deliveries", (
+                CreateMultiStopDeliveryRequest request,
+                IMultiStopDeliveryClient service) =>
+            {
+                return service.GetQuotes(request);
             });
     }
 }

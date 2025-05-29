@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Light.GrabSdk.GrabExpress.Delivery
+namespace Light.GrabSdk.GrabExpress.Delivery.Create
 {
     public class DeliveryDetailsResponse
     {

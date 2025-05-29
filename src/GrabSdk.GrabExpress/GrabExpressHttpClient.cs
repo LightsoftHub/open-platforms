@@ -1,8 +1,10 @@
 ﻿using Light.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -66,11 +68,25 @@ namespace Light.GrabSdk.GrabExpress
         {
             var statusCode = (int)response.StatusCode;
 
-            var errorContent = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
+            var contentStr = await response.Content.ReadAsStringAsync();
 
-            var errors = errorContent.Select(s => $"{s.Key}: {s.Value}").ToList();
+            if (string.IsNullOrEmpty(contentStr))
+            {
+                return Result.Error($"ResponseCode: {statusCode}");
+            }
 
-            return Result.Error($"ResponseCode: {statusCode}|{string.Join("|", errors)}");
+            try
+            {
+                var errorContent = JsonSerializer.Deserialize<Dictionary<string, object>>(contentStr);
+
+                var errors = errorContent.Select(s => $"{s.Key}: {s.Value}").ToList();
+
+                return Result.Error($"ResponseCode: {statusCode}|{string.Join("|", errors)}");
+            }
+            catch (Exception ex)
+            {
+                return Result.Error($"ResponseCode: {statusCode}|{contentStr}|{ex.Message}");
+            }
         }
     }
 }

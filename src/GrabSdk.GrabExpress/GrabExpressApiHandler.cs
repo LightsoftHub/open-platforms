@@ -21,8 +21,12 @@ namespace Light.GrabSdk.GrabExpress
             var path = request.RequestUri?.AbsolutePath;
             var query = request.RequestUri?.Query;
 
-            // skip token endpoints
-            if (path.Contains("/token") is false)
+            // add auth before send request
+            var token = await _credential.GetAccessToken();
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            // skip add env path when call multi stop
+            if (path.StartsWith("/grabfood") is false)
             {
                 var environment = _credential.Environment;
 
@@ -31,9 +35,6 @@ namespace Light.GrabSdk.GrabExpress
 
                 // override with new Uri
                 request.RequestUri = new Uri(uri);
-
-                var token = await _credential.GetAccessToken();
-                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
             }
 
             return await base.SendAsync(request, cancellationToken);

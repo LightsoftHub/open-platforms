@@ -25,6 +25,7 @@ namespace Light.GrabSdk.GrabExpress
         public static IServiceCollection AddGrabExpressAPI(this IServiceCollection services)
         {
             services.AddScoped<IDeliveryClient, DeliveryClient>();
+            services.AddScoped<IMultiStopDeliveryClient, MultiStopDeliveryClient>();
 
             return services;
         }

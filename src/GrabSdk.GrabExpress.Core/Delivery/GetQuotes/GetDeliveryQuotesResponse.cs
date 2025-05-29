@@ -1,7 +1,7 @@
 ﻿using Light.GrabSdk.GrabExpress.Common;
 using System.Collections.Generic;
 
-namespace Light.GrabSdk.GrabExpress.DeliveryQuotes
+namespace Light.GrabSdk.GrabExpress.Delivery.GetQuotes
 {
     public class GetDeliveryQuotesResponse
     {
