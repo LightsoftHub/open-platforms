@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         dotnet restore src/TikiSdk.Core/TikiSdk.Core.csproj
-        dotnet restore src/TikiSdk/Tiki.Sdk.csproj
+        dotnet restore src/TikiSdk/TikiSdk.csproj
 
     - name: Build
       run: |
