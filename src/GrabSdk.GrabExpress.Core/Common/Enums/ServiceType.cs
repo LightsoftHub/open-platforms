@@ -1,4 +1,4 @@
-﻿namespace Light.GrabSdk.GrabExpress.Common.Enums
+﻿namespace Light.Grab.GrabExpress.Common.Enums
 {
     public enum ServiceType
     {

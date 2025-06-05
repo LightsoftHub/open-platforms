@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Light.GrabSdk.GrabMart
+namespace Light.Grab.GrabMart
 {
     public interface IGrabMartCredential
     {

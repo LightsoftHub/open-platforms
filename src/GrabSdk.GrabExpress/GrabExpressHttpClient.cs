@@ -8,7 +8,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Light.GrabSdk.GrabExpress
+namespace Light.Grab.GrabExpress
 {
     public abstract class GrabExpressHttpClient
     {

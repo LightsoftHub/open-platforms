@@ -2,7 +2,7 @@
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
-namespace Light.GrabSdk.Auth
+namespace Light.Grab.Auth
 {
     public class GrabAuthClient
     {

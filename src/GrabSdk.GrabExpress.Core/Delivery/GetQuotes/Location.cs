@@ -1,4 +1,4 @@
-﻿namespace Light.GrabSdk.GrabExpress.Delivery.GetQuotes
+﻿namespace Light.Grab.GrabExpress.Delivery.GetQuotes
 {
     public class Location : Common.Address
     {

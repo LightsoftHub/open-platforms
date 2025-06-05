@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Light.GrabSdk.GrabExpress.Delivery.Create
+namespace Light.Grab.GrabExpress.Delivery.Create
 {
     public class Schedule
     {

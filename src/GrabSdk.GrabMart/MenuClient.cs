@@ -1,9 +1,9 @@
 ﻿using Light.Contracts;
-using Light.GrabSdk.GrabMart.Models.MasterData;
+using Light.Grab.GrabMart.Models.MasterData;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Light.GrabSdk.GrabMart
+namespace Light.Grab.GrabMart
 {
     public class MenuClient : GrabMartHttpClient, IMenuClient
     {

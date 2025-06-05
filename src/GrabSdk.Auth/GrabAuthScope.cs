@@ -1,4 +1,4 @@
-﻿namespace Light.GrabSdk.Auth
+﻿namespace Light.Grab.Auth
 {
     public class GrabAuthScope
     {

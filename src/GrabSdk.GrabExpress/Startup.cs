@@ -2,7 +2,7 @@
 using System;
 using System.Net.Http;
 
-namespace Light.GrabSdk.GrabExpress
+namespace Light.Grab.GrabExpress
 {
     public static class Startup
     {

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -15,9 +15,9 @@
     <ProjectReference Include="..\GrabSdk.Auth\GrabSdk.Auth.csproj" />
     <ProjectReference Include="..\GrabSdk.GrabExpress\GrabSdk.GrabExpress.csproj" />
     <ProjectReference Include="..\GrabSdk.GrabMart\GrabSdk.GrabMart.csproj" />
-    <ProjectReference Include="..\Lazada.Sdk\Lazada.Sdk.csproj" />
-    <ProjectReference Include="..\Shopee.Sdk\Shopee.Sdk.csproj" />
-    <ProjectReference Include="..\Tiki.Sdk\Tiki.Sdk.csproj" />
+    <ProjectReference Include="..\LazadaSdk\LazadaSdk.csproj" />
+    <ProjectReference Include="..\ShopeeSdk\ShopeeSdk.csproj" />
+    <ProjectReference Include="..\TikiSdk\TikiSdk.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Light.GrabSdk.GrabMart.Models.MasterData
+namespace Light.Grab.GrabMart.Models.MasterData
 {
     public class MartCategory
     {

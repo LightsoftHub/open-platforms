@@ -1,4 +1,4 @@
-﻿using Light.GrabSdk.GrabMart;
+﻿using Light.Grab.GrabMart;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.GrabMart;

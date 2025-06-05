@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace Light.GrabSdk.GrabExpress
+namespace Light.Grab.GrabExpress
 {
     public class GrabResult
     {

@@ -1,10 +1,10 @@
 ﻿using Light.Contracts;
-using Light.GrabSdk.GrabMart.Models.Campaigns;
+using Light.Grab.GrabMart.Models.Campaigns;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Light.GrabSdk.GrabMart
+namespace Light.Grab.GrabMart
 {
     public class CampaignClient : GrabMartHttpClient, ICampaignClient
     {

@@ -1,7 +1,7 @@
-﻿using Light.GrabSdk.GrabMart.Models.Common;
+﻿using Light.Grab.GrabMart.Models.Common;
 using System.Text.Json.Serialization;
 
-namespace Light.GrabSdk.GrabMart.Models.Campaigns
+namespace Light.Grab.GrabMart.Models.Campaigns
 {
     /// <summary>
     /// Use for Campaign

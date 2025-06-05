@@ -4,7 +4,7 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Light.GrabSdk.GrabMart
+namespace Light.Grab.GrabMart
 {
     public class GrabMartApiHandler : DelegatingHandler
     {

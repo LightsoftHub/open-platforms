@@ -1,10 +1,10 @@
 ﻿using Light.Contracts;
-using Light.GrabSdk.GrabExpress.MultiStopDelivery.Create;
-using Light.GrabSdk.GrabExpress.MultiStopDelivery.GetQuotes;
+using Light.Grab.GrabExpress.MultiStopDelivery.Create;
+using Light.Grab.GrabExpress.MultiStopDelivery.GetQuotes;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Light.GrabSdk.GrabExpress
+namespace Light.Grab.GrabExpress
 {
     internal class MultiStopDeliveryClient : GrabExpressHttpClient, IMultiStopDeliveryClient
     {

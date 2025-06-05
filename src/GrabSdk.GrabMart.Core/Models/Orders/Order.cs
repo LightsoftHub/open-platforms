@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Light.GrabSdk.GrabMart.Models.Orders
+namespace Light.Grab.GrabMart.Models.Orders
 {
     public class Order
     {

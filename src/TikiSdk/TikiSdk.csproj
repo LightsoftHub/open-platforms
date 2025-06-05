@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
 	<RootNamespace>Light.Tiki</RootNamespace>
-	<AssemblyName>Lightsoft.Tiki.Sdk</AssemblyName>
-	<Title>Lightsoft.Tiki.Sdk</Title>
+	<AssemblyName>Lightsoft.Tiki</AssemblyName>
+	<Title>Lightsoft.Tiki</Title>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<Authors>minhvu</Authors>
 	<Description>Package contains Tiki api reference implements.</Description>
@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tiki.Core\Tiki.Core.csproj" />
+    <ProjectReference Include="..\TikiSdk.Core\TikiSdk.Core.csproj" />
   </ItemGroup>
 
 </Project>

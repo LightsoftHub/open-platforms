@@ -1,4 +1,4 @@
-﻿namespace Light.GrabSdk.GrabExpress.MultiStopDelivery
+﻿namespace Light.Grab.GrabExpress.MultiStopDelivery
 {
     public class Package : Common.Package
     {

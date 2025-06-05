@@ -1,9 +1,9 @@
 ﻿using Light.Contracts;
-using Light.GrabSdk.GrabExpress.Delivery.Create;
-using Light.GrabSdk.GrabExpress.Delivery.GetQuotes;
+using Light.Grab.GrabExpress.Delivery.Create;
+using Light.Grab.GrabExpress.Delivery.GetQuotes;
 using System.Threading.Tasks;
 
-namespace Light.GrabSdk.GrabExpress
+namespace Light.Grab.GrabExpress
 {
     public interface IDeliveryClient
     {

@@ -1,6 +1,6 @@
-﻿using Light.GrabSdk.GrabExpress.Common;
+﻿using Light.Grab.GrabExpress.Common;
 
-namespace Light.GrabSdk.GrabExpress.MultiStopDelivery.Create
+namespace Light.Grab.GrabExpress.MultiStopDelivery.Create
 {
     public class Origin : Address
     {

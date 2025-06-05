@@ -1,9 +1,9 @@
-﻿using Light.GrabSdk.GrabMart.Enums;
+﻿using Light.Grab.GrabMart.Enums;
 using System;
 using System.ComponentModel;
 using System.Text.Json.Serialization;
 
-namespace Light.GrabSdk.GrabMart.Models.Campaigns
+namespace Light.Grab.GrabMart.Models.Campaigns
 {
     public abstract class GrabCampaignBase
     {

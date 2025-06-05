@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Light.GrabSdk.GrabExpress
+namespace Light.Grab.GrabExpress
 {
     public interface IGrabExpressCredential
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Light.GrabSdk.Auth
+namespace Light.Grab.Auth
 {
     public static class Startup
     {

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Light.GrabSdk.GrabMart.Models.Campaigns
+namespace Light.Grab.GrabMart.Models.Campaigns
 {
     public class NewCampaignResponse
     {

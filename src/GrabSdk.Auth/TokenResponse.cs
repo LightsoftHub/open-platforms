@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Light.GrabSdk.Auth
+namespace Light.Grab.Auth
 {
     public class TokenResponse
     {

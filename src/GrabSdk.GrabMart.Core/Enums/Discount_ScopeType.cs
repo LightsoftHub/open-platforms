@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Light.GrabSdk.GrabMart.Enums
+namespace Light.Grab.GrabMart.Enums
 {
     public enum Discount_ScopeType
     {

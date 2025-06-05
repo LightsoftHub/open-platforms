@@ -2,7 +2,7 @@
 using System;
 using System.Net.Http;
 
-namespace Light.GrabSdk.GrabMart
+namespace Light.Grab.GrabMart
 {
     public static class Startup
     {

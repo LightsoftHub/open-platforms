@@ -1,8 +1,8 @@
-﻿using Light.GrabSdk.GrabExpress.Common;
+﻿using Light.Grab.GrabExpress.Common;
 using System;
 using System.Collections.Generic;
 
-namespace Light.GrabSdk.GrabExpress.MultiStopDelivery.Create
+namespace Light.Grab.GrabExpress.MultiStopDelivery.Create
 {
     public class CreateMultiStopDeliveryResponse
     {

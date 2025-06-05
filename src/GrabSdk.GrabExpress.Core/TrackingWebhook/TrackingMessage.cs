@@ -1,4 +1,4 @@
-﻿namespace Light.GrabSdk.GrabExpress.TrackingWebhook
+﻿namespace Light.Grab.GrabExpress.TrackingWebhook
 {
     public class TrackingMessage
     {

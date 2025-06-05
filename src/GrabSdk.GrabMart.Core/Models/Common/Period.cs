@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace Light.GrabSdk.GrabMart.Models.Common
+namespace Light.Grab.GrabMart.Models.Common
 {
     public class Period
     {

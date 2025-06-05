@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-	<RootNamespace>Light.GrabSdk.GrabExpress</RootNamespace>
-	<AssemblyName>Lightsoft.GrabSdk.GrabExpress</AssemblyName>
-	<Title>Lightsoft.GrabSdk.GrabExpress</Title>
+	<RootNamespace>Light.Grab.GrabExpress</RootNamespace>
+	<AssemblyName>Lightsoft.Grab.GrabExpress</AssemblyName>
+	<Title>Lightsoft.Grab.GrabExpress</Title>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<Authors>minhvu</Authors>
 	<Description>Package contains Grab Express api reference implements.</Description>
 	<Summary>Package contains Grab Express api reference implements.</Summary>
-	<Version>0.0.0.1-beta1</Version>
+	<Version>0.0.0.1-beta2</Version>
 	<PackageTags>lightframework</PackageTags>
 	<PackageIcon>icon.png</PackageIcon>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>

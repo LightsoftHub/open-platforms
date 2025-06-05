@@ -1,6 +1,6 @@
-﻿using Light.GrabSdk.GrabMart.Models.Common;
+﻿using Light.Grab.GrabMart.Models.Common;
 
-namespace Light.GrabSdk.GrabMart.Models.MasterData
+namespace Light.Grab.GrabMart.Models.MasterData
 {
     /// <summary>
     /// Use for Menu

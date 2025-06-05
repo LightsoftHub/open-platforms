@@ -1,6 +1,6 @@
-﻿using Light.GrabSdk.GrabMart.Enums;
+﻿using Light.Grab.GrabMart.Enums;
 
-namespace Light.GrabSdk.GrabMart.Models.Campaigns
+namespace Light.Grab.GrabMart.Models.Campaigns
 {
     public class Campaign : GrabCampaignBase
     {

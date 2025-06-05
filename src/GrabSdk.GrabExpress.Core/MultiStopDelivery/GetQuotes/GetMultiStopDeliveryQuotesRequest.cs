@@ -1,7 +1,7 @@
-﻿using Light.GrabSdk.GrabExpress.Common;
+﻿using Light.Grab.GrabExpress.Common;
 using System.Collections.Generic;
 
-namespace Light.GrabSdk.GrabExpress.MultiStopDelivery.GetQuotes
+namespace Light.Grab.GrabExpress.MultiStopDelivery.GetQuotes
 {
     public class GetMultiStopDeliveryQuotesRequest : MultiStopDeliveryBase
     {

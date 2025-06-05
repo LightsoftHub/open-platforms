@@ -1,4 +1,4 @@
-﻿namespace Light.GrabSdk.GrabExpress.Common.Enums
+﻿namespace Light.Grab.GrabExpress.Common.Enums
 {
     /// <summary>
     /// Delivery fee (paid to driver) payment method i.e. CASH, CASHLESS. Default value (if not sent): CASHLESS

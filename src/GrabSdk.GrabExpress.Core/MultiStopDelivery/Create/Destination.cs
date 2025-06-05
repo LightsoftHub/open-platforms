@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Light.GrabSdk.GrabExpress.MultiStopDelivery.Create
+namespace Light.Grab.GrabExpress.MultiStopDelivery.Create
 {
     public class Destination : Origin
     {

@@ -1,4 +1,4 @@
-﻿namespace Light.GrabSdk.GrabMart.Enums
+﻿namespace Light.Grab.GrabMart.Enums
 {
     public enum Order_State
     {

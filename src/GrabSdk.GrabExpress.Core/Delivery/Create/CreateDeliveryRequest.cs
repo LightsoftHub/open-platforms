@@ -1,7 +1,7 @@
-﻿using Light.GrabSdk.GrabExpress.Common;
+﻿using Light.Grab.GrabExpress.Common;
 using System.Collections.Generic;
 
-namespace Light.GrabSdk.GrabExpress.Delivery.Create
+namespace Light.Grab.GrabExpress.Delivery.Create
 {
     public class CreateDeliveryRequest
     {

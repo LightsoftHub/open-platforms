@@ -1,12 +1,12 @@
 ﻿using Light.Contracts;
-using Light.GrabSdk.GrabMart.Models.Orders;
+using Light.Grab.GrabMart.Models.Orders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Light.GrabSdk.GrabMart
+namespace Light.Grab.GrabMart
 {
     public class OrderClient : GrabMartHttpClient, IOrderClient
     {

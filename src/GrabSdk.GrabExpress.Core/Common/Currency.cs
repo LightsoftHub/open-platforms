@@ -1,4 +1,4 @@
-﻿namespace Light.GrabSdk.GrabExpress.Common
+﻿namespace Light.Grab.GrabExpress.Common
 {
     public class Currency
     {
