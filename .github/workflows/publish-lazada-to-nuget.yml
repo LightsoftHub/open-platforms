@@ -18,19 +18,19 @@ jobs:
 
     - name: Install dependencies
       run: |
-        dotnet restore src/Lazada.Core/Lazada.Core.csproj
-        dotnet restore src/Lazada.Sdk/Lazada.Sdk.csproj
+        dotnet restore src/LazadaSdk.Core/LazadaSdk.Core.csproj
+        dotnet restore src/LazadaSdk/LazadaSdk.csproj
 
     - name: Build
       run: |
-        dotnet build src/Lazada.Core/Lazada.Core.csproj --configuration Release --no-restore
-        dotnet build src/Lazada.Sdk/Lazada.Sdk.csproj --configuration Release --no-restore
+        dotnet build src/LazadaSdk.Core/LazadaSdk.Core.csproj --configuration Release --no-restore
+        dotnet build src/LazadaSdk/LazadaSdk.csproj --configuration Release --no-restore
 
     - name: Publish to Nuget.org
       run: |
         rm -rf nuget/
 
-        dotnet pack --no-build src/Lazada.Core/Lazada.Core.csproj --configuration Release --output nuget
-        dotnet pack --no-build src/Lazada.Sdk/Lazada.Sdk.csproj --configuration Release --output nuget
+        dotnet pack --no-build src/LazadaSdk.Core/LazadaSdk.Core.csproj --configuration Release --output nuget
+        dotnet pack --no-build src/LazadaSdk/LazadaSdk.csproj --configuration Release --output nuget
 
         dotnet nuget push nuget/*.nupkg -k '${{ secrets.NUGET_API_KEY }}' --skip-duplicate -s https://api.nuget.org/v3/index.json

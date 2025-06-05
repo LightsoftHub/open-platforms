@@ -18,19 +18,19 @@ jobs:
 
     - name: Install dependencies
       run: |
-        dotnet restore src/Shopee.Core/Shopee.Core.csproj
-        dotnet restore src/Shopee.Sdk/Shopee.Sdk.csproj
+        dotnet restore src/ShopeeSdk.Core/ShopeeSdk.Core.csproj
+        dotnet restore src/ShopeeSdk/ShopeeSdk.csproj
 
     - name: Build
       run: |
-        dotnet build src/Shopee.Core/Shopee.Core.csproj --configuration Release --no-restore
-        dotnet build src/Shopee.Sdk/Shopee.Sdk.csproj --configuration Release --no-restore
+        dotnet build src/ShopeeSdk.Core/ShopeeSdk.Core.csproj --configuration Release --no-restore
+        dotnet build src/ShopeeSdk/ShopeeSdk.csproj --configuration Release --no-restore
 
     - name: Publish to Nuget.org
       run: |
         rm -rf nuget/
 
-        dotnet pack --no-build src/Shopee.Core/Shopee.Core.csproj --configuration Release --output nuget
-        dotnet pack --no-build src/Shopee.Sdk/Shopee.Sdk.csproj --configuration Release --output nuget
+        dotnet pack --no-build src/ShopeeSdk.Core/ShopeeSdk.Core.csproj --configuration Release --output nuget
+        dotnet pack --no-build src/ShopeeSdk/ShopeeSdk.csproj --configuration Release --output nuget
 
         dotnet nuget push nuget/*.nupkg -k '${{ secrets.NUGET_API_KEY }}' --skip-duplicate -s https://api.nuget.org/v3/index.json

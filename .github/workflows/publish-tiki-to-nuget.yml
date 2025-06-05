@@ -18,19 +18,19 @@ jobs:
 
     - name: Install dependencies
       run: |
-        dotnet restore src/Tiki.Core/Tiki.Core.csproj
-        dotnet restore src/Tiki.Sdk/Tiki.Sdk.csproj
+        dotnet restore src/TikiSdk.Core/TikiSdk.Core.csproj
+        dotnet restore src/TikiSdk/Tiki.Sdk.csproj
 
     - name: Build
       run: |
-        dotnet build src/Tiki.Core/Tiki.Core.csproj --configuration Release --no-restore
-        dotnet build src/Tiki.Sdk/Tiki.Sdk.csproj --configuration Release --no-restore
+        dotnet build src/TikiSdk.Core/TikiSdk.Core.csproj --configuration Release --no-restore
+        dotnet build src/TikiSdk/TikiSdk.csproj --configuration Release --no-restore
 
     - name: Publish to Nuget.org
       run: |
         rm -rf nuget/
 
-        dotnet pack --no-build src/Tiki.Core/Tiki.Core.csproj --configuration Release --output nuget
-        dotnet pack --no-build src/Tiki.Sdk/Tiki.Sdk.csproj --configuration Release --output nuget
+        dotnet pack --no-build src/TikiSdk.Core/TikiSdk.Core.csproj --configuration Release --output nuget
+        dotnet pack --no-build src/TikiSdk/TikiSdk.csproj --configuration Release --output nuget
 
         dotnet nuget push nuget/*.nupkg -k '${{ secrets.NUGET_API_KEY }}' --skip-duplicate -s https://api.nuget.org/v3/index.json
