@@ -10,6 +10,10 @@ Accept: application/json
 GET {{Api_HostAddress}}/product/{{ProductId}}
 Accept: application/json
 
+###
+GET {{Api_HostAddress}}/product/update_stock?itemId=1969963007&skuId=9099096798&sellerSku="212429"&stock=1
+Accept: application/json
+
 ### Orders
 GET {{Api_HostAddress}}/orders
 Accept: application/json

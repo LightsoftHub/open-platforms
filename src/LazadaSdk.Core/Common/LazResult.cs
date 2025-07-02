@@ -44,7 +44,22 @@ namespace Light.Lazada.Common
         public T Result { get; set; }
 
         [JsonPropertyName("data")]
-        public T Data { set { Result = value; } }
+        public T Data
+        {
+            set
+            {
+                Result = value;
+            }
+        }
+
+        [JsonPropertyName("detail")]
+        public T Detail
+        {
+            set
+            {
+                Result = value;
+            }
+        }
 
         public override bool IsSuccess => base.IsSuccess && Result != null;
 

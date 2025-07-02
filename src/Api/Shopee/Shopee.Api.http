@@ -28,7 +28,7 @@ GET {{Api_HostAddress}}/order/{{Ordersn}}
 Accept: application/json
 
 ### Get Order buyer invoice info
-POST {{Api_HostAddress}}/order/buyer_invoice_info
+POST {{Api_HostAddress}}/order/get_buyer_invoice_info
 Accept: application/json
 Content-Type: application/json
 ["250615JSSV6DED", "250615JSTG5NGU"]

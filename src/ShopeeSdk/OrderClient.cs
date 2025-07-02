@@ -1,7 +1,9 @@
 using Light.Shopee.Models;
 using Light.Shopee.Models.Order;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace Light.Shopee
@@ -41,7 +43,7 @@ namespace Light.Shopee
             return TryPostAsync<HandleBuyerCancellationResponse>(path, request);
         }
 
-        public Task<IShopeeResult<object>> GetBuyerInvoiceInfo(string[] orderList)
+        public async Task<IShopeeResult<List<BuyerInvoiceInfo>>> GetBuyerInvoiceInfo(string[] orderList)
         {
             var path = "/api/v2/order/get_buyer_invoice_info";
 
@@ -53,7 +55,11 @@ namespace Light.Shopee
                 })
             };
 
-            return TryPostAsync<object>(path, request);
+            var response = await PostAsJsonAsync(path, request);
+
+            var result = await response.Content.ReadFromJsonAsync<BuyerInvoiceInfoResponse>();
+
+            return result;
         }
     }
 }

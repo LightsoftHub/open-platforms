@@ -1,5 +1,6 @@
 using Light.Shopee.Models;
 using Light.Shopee.Models.Order;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Light.Shopee
@@ -17,6 +18,6 @@ namespace Light.Shopee
         Task<IShopeeResult<HandleBuyerCancellationResponse>> HandleBuyerCancellation(string ordersn, bool accept);
 
         // https://open.shopee.com/documents/v2/v2.order.get_buyer_invoice_info?module=94&type=1
-        Task<IShopeeResult<object>> GetBuyerInvoiceInfo(string[] ordersn);
+        Task<IShopeeResult<List<BuyerInvoiceInfo>>> GetBuyerInvoiceInfo(string[] ordersn);
     }
 }

@@ -24,7 +24,7 @@ public static class OrderEndpoints
             });
 
         endpoint
-            .MapPost("/order/buyer_invoice_info", ([FromBody] string[] orders, IOrderClient orderClient) =>
+            .MapPost("/order/get_buyer_invoice_info", ([FromBody] string[] orders, IOrderClient orderClient) =>
             {
                 return orderClient.GetBuyerInvoiceInfo(orders);
             });

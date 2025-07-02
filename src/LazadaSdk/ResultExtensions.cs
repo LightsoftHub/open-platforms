@@ -1,4 +1,5 @@
 ﻿using Light.Lazada.Common;
+using Light.Lazada.Models.Products;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -52,28 +53,29 @@ namespace Light.Lazada
             }
         }
 
-        public static async Task<LazResult<List<Detail>>> ReadDetail(this HttpResponseMessage response)
+        public static async Task<LazResult> ReadDetail(this HttpResponseMessage response)
         {
             try
             {
                 var lazResult = await response.Content.ReadFromJsonAsync<LazResultDetail>();
 
                 if (lazResult is null)
-                    return LazResult<List<Detail>>.Failed("Error when read LazResult.Detail from HttpResponseMessage");
+                    return LazResult<List<UploadStockResponse>>.Failed("Error when read LazResult.Detail from HttpResponseMessage");
 
-                return new LazResult<List<Detail>>
-                {
-                    Type = lazResult.Type,
-                    Code = lazResult.Code,
-                    Message = lazResult.Message,
-                    RequestId = lazResult.RequestId,
-                    Result = lazResult.Detail
-                };
+                return lazResult;
             }
             catch (Exception ex)
             {
-                return LazResult<List<Detail>>.Failed(ex.Message);
+                return LazResult<List<UploadStockResponse>>.Failed(ex.Message);
             }
+        }
+
+        public static async Task<T> ReadDetail<T>(this HttpResponseMessage response)
+            where T : LazResult
+        {
+            var lazResult = await response.Content.ReadFromJsonAsync<T>();
+
+            return lazResult;
         }
     }
 }

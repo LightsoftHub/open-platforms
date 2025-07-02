@@ -75,7 +75,7 @@ namespace Light.Lazada
             return result;
         }
 
-        public async Task<LazResult> UpdateSellableQuantity(UploadStockRequest dto)
+        public async Task<LazResult<List<UploadStockResponse>>> UpdateSellableQuantity(UploadStockRequest dto)
         {
             var path = "/product/stock/sellable/update";
             var request = new Dictionary<string, string>()
@@ -83,9 +83,9 @@ namespace Light.Lazada
                 { "payload", dto.Payload },
             };
 
-            var response = await TryGetAsync(path, request);
+            var response = await TryPostAsync(path, request);
 
-            var result = await response.ReadDetail();
+            var result = await response.Read<List<UploadStockResponse>>();
 
             return result;
         }

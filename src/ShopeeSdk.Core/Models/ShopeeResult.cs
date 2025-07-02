@@ -56,16 +56,6 @@ namespace Light.Shopee.Models
         [JsonPropertyName("response")]
         public T Response { get; set; }
 
-        [JsonPropertyName("invoice_info_list")]
-        //public T InvoiceInfoList { set { if (value != null) { Response = value; } } }
-        public T InvoiceInfoList
-        {
-            set
-            {
-                Response = value;
-            }
-        }
-
         public override bool Succeeded => base.Succeeded && Response != null;
 
         public static IShopeeResult<T> Success(T data)

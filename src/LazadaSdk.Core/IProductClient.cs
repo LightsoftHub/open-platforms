@@ -1,6 +1,7 @@
 ﻿using Light.Lazada.Common;
 using Light.Lazada.Models.Products;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Light.Lazada
@@ -28,6 +29,6 @@ namespace Light.Lazada
         /// <summary>
         /// https://open.lazada.com/apps/doc/api?spm=a1zq7z.man108146.site_detail.18.a0137c7307vc5p&path=%2Fproduct%2Fstock%2Fsellable%2Fupdate
         /// </summary>
-        Task<LazResult> UpdateSellableQuantity(UploadStockRequest dto);
+        Task<LazResult<List<UploadStockResponse>>> UpdateSellableQuantity(UploadStockRequest dto);
     }
 }

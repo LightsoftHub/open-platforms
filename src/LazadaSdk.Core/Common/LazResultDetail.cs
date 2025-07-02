@@ -1,26 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using Light.Lazada.Models.Products;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace Light.Lazada.Common
 {
-    public class LazResultDetail : LazResult
+    public class LazResultDetail : LazResult<List<UploadStockResponse>>
     {
+        private List<UploadStockResponse> _detail;
+
         [JsonPropertyName("detail")]
-        public List<Detail> Detail { get; set; }
-    }
-
-    public class Detail
-    {
-        [JsonPropertyName("field")]
-        public string Field { get; set; }
-
-        [JsonPropertyName("message")]
-        public string Message { get; set; }
-
-        [JsonPropertyName("seller_sku")]
-        public string SellerSku { get; set; }
-
-        [JsonPropertyName("code")]
-        public string Code { get; set; }
+        public List<UploadStockResponse> Detail { get { return Result; } set { Result = value; } }
     }
 }
