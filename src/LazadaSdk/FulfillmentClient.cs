@@ -125,7 +125,7 @@ namespace Light.Lazada
 
             var result = await response.Read<PrintAWBResult>();
 
-            var printAwbResult = result?.Result;
+            var printAwbResult = result?.Data;
 
             if (printAwbResult?.Success is true)
             {

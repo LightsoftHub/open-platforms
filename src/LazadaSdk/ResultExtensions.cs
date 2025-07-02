@@ -44,7 +44,7 @@ namespace Light.Lazada
                     Code = result.Code,
                     Message = result.Message,
                     RequestId = result.RequestId,
-                    Result = result.Data
+                    Data = result.Data
                 };
             }
             catch (Exception ex)
@@ -57,7 +57,7 @@ namespace Light.Lazada
         {
             try
             {
-                var lazResult = await response.Content.ReadFromJsonAsync<LazResultDetail>();
+                var lazResult = await response.Content.ReadFromJsonAsync<LazResult>();
 
                 if (lazResult is null)
                     return LazResult<List<UploadStockResponse>>.Failed("Error when read LazResult.Detail from HttpResponseMessage");
@@ -68,14 +68,6 @@ namespace Light.Lazada
             {
                 return LazResult<List<UploadStockResponse>>.Failed(ex.Message);
             }
-        }
-
-        public static async Task<T> ReadDetail<T>(this HttpResponseMessage response)
-            where T : LazResult
-        {
-            var lazResult = await response.Content.ReadFromJsonAsync<T>();
-
-            return lazResult;
         }
     }
 }

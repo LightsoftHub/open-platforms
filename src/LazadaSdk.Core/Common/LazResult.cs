@@ -40,35 +40,17 @@ namespace Light.Lazada.Common
 
     public class LazResult<T> : LazResult
     {
-        [JsonPropertyName("result")]
-        public T Result { get; set; }
-
         [JsonPropertyName("data")]
-        public T Data
-        {
-            set
-            {
-                Result = value;
-            }
-        }
+        public T Data { get; set; }
 
-        [JsonPropertyName("detail")]
-        public T Detail
-        {
-            set
-            {
-                Result = value;
-            }
-        }
-
-        public override bool IsSuccess => base.IsSuccess && Result != null;
+        public override bool IsSuccess => base.IsSuccess && Data != null;
 
         public static LazResult<T> Success(T result)
         {
             return new LazResult<T>
             {
                 Code = "0",
-                Result = result
+                Data = result
             };
         }
 
