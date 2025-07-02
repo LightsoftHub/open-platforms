@@ -10,7 +10,7 @@ namespace Light.Lazada
         /// <summary>
         /// https://open.lazada.com/apps/doc/api?path=%2Fproduct%2Fitem%2Fget
         /// </summary>
-        Task<LazResult<Product>> GetProductItem(string sellerSku, string itemId = null);
+        Task<LazResult<Product>> GetProductItem(string itemId);
 
         /// <summary>
         /// https://open.lazada.com/apps/doc/api?path=%2Fproducts%2Fget

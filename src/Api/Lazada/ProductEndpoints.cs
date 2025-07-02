@@ -1,4 +1,5 @@
 ﻿using Light.Lazada;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Lazada;
 
@@ -13,9 +14,9 @@ public static class ProductEndpoints
             });
 
         endpoint
-            .MapGet("/product/{sellerSku}", (string sellerSku, IProductClient client) =>
+            .MapGet("/product/{itemId}", ([FromRoute] string itemId, IProductClient client) =>
             {
-                return client.GetProductItem(sellerSku);
+                return client.GetProductItem(itemId);
             });
     }
 }

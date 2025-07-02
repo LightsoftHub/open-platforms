@@ -13,25 +13,18 @@ namespace Light.Lazada
         {
         }
 
-        public async Task<LazResult<Product>> GetProductItem(string sellerSku, string itemId)
+        public async Task<LazResult<Product>> GetProductItem(string itemId)
         {
             var path = "/product/item/get";
-            var request = new Dictionary<string, string>()
-        {
-            { "seller_sku", sellerSku },
-        };
 
-            if (string.IsNullOrEmpty(itemId) is false)
+            var request = new Dictionary<string, string>()
             {
-                request = new Dictionary<string, string>()
-            {
-                { "item_id", itemId },
+                { "item_id", itemId }
             };
-            }
 
             var response = await TryGetAsync(path, request);
 
-            var result = await response.ReadData<Product>();
+            var result = await response.Read<Product>();
 
             return result;
         }
@@ -62,7 +55,7 @@ namespace Light.Lazada
 
             var response = await TryGetAsync(path, request);
 
-            var result = await response.ReadData<ProductList>();
+            var result = await response.Read<ProductList>();
 
             return result;
         }

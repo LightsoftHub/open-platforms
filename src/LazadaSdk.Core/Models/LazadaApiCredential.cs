@@ -38,6 +38,7 @@ namespace Light.Lazada.Models
         private string UrlQueryBuilder(string path, Dictionary<string, string> request, bool forAuth)
         {
             var appKey = AppKey;
+            var appSecret = AppSecret;
             var timestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             var signMethod = Signature.SIGN_METHOD_SHA256;
 
@@ -53,7 +54,7 @@ namespace Light.Lazada.Models
             }
 
             // generate Sign
-            var sign = Signature.SignRequest(request, AppSecret, path);
+            var sign = Signature.SignRequest(request, appSecret, path);
 
             // add params request to url query
             var urlQuery = ToQueryString(request);

@@ -18,5 +18,11 @@ public static class OrderEndpoints
             {
                 return orderClient.GetOrder(orderid);
             });
+
+        endpoint
+            .MapPost("/order/get_document", ([FromBody] string[] orderItemIds, IOrderClient orderClient) =>
+            {
+                return orderClient.GetDocument(orderItemIds);
+            });
     }
 }

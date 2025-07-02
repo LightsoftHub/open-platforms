@@ -39,7 +39,7 @@ namespace Light.Shopee.Models
         public string RequestId { get; set; }
 
         [JsonPropertyOrder(-1)]
-        public bool Succeeded => string.IsNullOrEmpty(Error) && string.IsNullOrEmpty(Message);
+        public virtual bool Succeeded => string.IsNullOrEmpty(Error) && string.IsNullOrEmpty(Message);
 
         public static IShopeeResult Failed(string message)
         {
@@ -55,6 +55,18 @@ namespace Light.Shopee.Models
     {
         [JsonPropertyName("response")]
         public T Response { get; set; }
+
+        [JsonPropertyName("invoice_info_list")]
+        //public T InvoiceInfoList { set { if (value != null) { Response = value; } } }
+        public T InvoiceInfoList
+        {
+            set
+            {
+                Response = value;
+            }
+        }
+
+        public override bool Succeeded => base.Succeeded && Response != null;
 
         public static IShopeeResult<T> Success(T data)
         {

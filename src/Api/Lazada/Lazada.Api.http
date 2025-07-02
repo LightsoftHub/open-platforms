@@ -1,6 +1,6 @@
 @Api_HostAddress = http://localhost:5266/lazada
-@OrderId = 250404DFDFH0E7
-@ProductId = 5120130578
+@OrderId = 514237118924226
+@ProductId = 3136220399
 
 ### Products
 GET {{Api_HostAddress}}/products
@@ -17,3 +17,9 @@ Accept: application/json
 ###
 GET {{Api_HostAddress}}/order/{{OrderId}}
 Accept: application/json
+
+###
+POST {{Api_HostAddress}}/order/get_document
+Accept: application/json
+Content-Type: application/json
+[ "513512508415615" ]

@@ -14,6 +14,23 @@ namespace Light.Lazada
         {
         }
 
+        public async Task<LazResult<OrderDocument>> GetDocument(IEnumerable<string> orderItemIds)
+        {
+            var path = "/order/document/get";
+
+            var request = new Dictionary<string, string>()
+            {
+                { "doc_type", "invoice" },
+                { "order_item_ids", $"[{orderItemIds.Join()}]" },
+            };
+
+            var response = await TryGetAsync(path, request);
+
+            var result = await response.Read<OrderDocument>();
+
+            return result;
+        }
+
         public async Task<LazResult<OrdersList>> GetOrders(int offset = 0, int limit = 100,
             DateTimeOffset? createdAfter = null, DateTimeOffset? createdBefore = null,
             DateTimeOffset? updateAfter = null, DateTimeOffset? updateBefore = null)
@@ -39,7 +56,7 @@ namespace Light.Lazada
 
             var response = await TryGetAsync(path, request);
 
-            var result = await response.ReadData<OrdersList>();
+            var result = await response.Read<OrdersList>();
 
             return result;
         }
@@ -54,7 +71,7 @@ namespace Light.Lazada
 
             var response = await TryGetAsync(path, request);
 
-            var result = await response.ReadData<Order>();
+            var result = await response.Read<Order>();
 
             return result;
         }
@@ -69,26 +86,9 @@ namespace Light.Lazada
 
             var response = await TryGetAsync(path, request);
 
-            var result = await response.ReadData<IEnumerable<OrderItem>>();
+            var result = await response.Read<IEnumerable<OrderItem>>();
 
             return result;
-        }
-
-        public async Task<object> GetShippingLabel(IEnumerable<string> orderItemIds)
-        {
-            var path = "/order/document/get";
-
-            var orderItems = orderItemIds.Join();
-
-            var request = new Dictionary<string, string>()
-            {
-                { "doc_type", "shippingLabel" },
-                { "order_item_ids", $"[{orderItems}]" },
-            };
-
-            var response = await TryGetAsync(path, request);
-
-            return await response.Content.ReadAsStringAsync();
         }
     }
 }

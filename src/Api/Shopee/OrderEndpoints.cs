@@ -22,6 +22,12 @@ public static class OrderEndpoints
             {
                 return orderClient.GetOrderDetails([ordersn]);
             });
+
+        endpoint
+            .MapPost("/order/buyer_invoice_info", ([FromBody] string[] orders, IOrderClient orderClient) =>
+            {
+                return orderClient.GetBuyerInvoiceInfo(orders);
+            });
     }
 
     public static void MapReturnEndpoints(this IEndpointRouteBuilder endpoint)

@@ -27,6 +27,7 @@ namespace Light.Lazada
 
         }
 
+        [Obsolete("Use Read<T> instead.")]
         public static async Task<LazResult<T>> ReadData<T>(this HttpResponseMessage response)
         {
             try

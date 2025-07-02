@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System;
+using System.Text.Json.Serialization;
 
 namespace Light.Lazada.Common
 {
@@ -16,7 +17,7 @@ namespace Light.Lazada.Common
         [JsonPropertyName("request_id")]
         public string RequestId { get; set; }
 
-        public bool IsSuccess => Code.Equals("0");
+        public virtual bool IsSuccess => Code.Equals("0");
 
         public static LazResult Success(string message = null)
         {
@@ -42,6 +43,11 @@ namespace Light.Lazada.Common
         [JsonPropertyName("result")]
         public T Result { get; set; }
 
+        [JsonPropertyName("data")]
+        public T Data { set { Result = value; } }
+
+        public override bool IsSuccess => base.IsSuccess && Result != null;
+
         public static LazResult<T> Success(T result)
         {
             return new LazResult<T>
@@ -61,10 +67,12 @@ namespace Light.Lazada.Common
         }
     }
 
-
+    [Obsolete("Use LazResult<T> instead.")]
     public class LazData<T> : LazResult
     {
         [JsonPropertyName("data")]
         public T Data { get; set; }
+
+        public override bool IsSuccess => base.IsSuccess && Data != null;
     }
 }
