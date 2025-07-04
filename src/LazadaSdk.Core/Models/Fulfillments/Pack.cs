@@ -23,7 +23,7 @@ namespace Light.Lazada.Models.Fulfillments
         /// Read PackedID from response data
         /// </summary>
         /// <returns></returns>
-        public LazResult<string[]> Packages
+        public ILazResponse<string[]> Packages
         {
             get
             {

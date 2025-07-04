@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Light.Lazada.Models.Auth
 {
-    public class TokenResponse : LazResult
+    public class TokenResponse : LazResponse
     {
         [JsonPropertyName("access_token")]
         public string AccessToken { get; set; }

@@ -1,7 +1,5 @@
 ﻿using Light.Lazada.Common;
-using Light.Lazada.Models.Products;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
@@ -10,35 +8,34 @@ namespace Light.Lazada
 {
     public static class ResultExtensions
     {
-        public static async Task<LazResult<T>> Read<T>(this HttpResponseMessage response)
-        {
-            try
-            {
-                var result = await response.Content.ReadFromJsonAsync<LazResult<T>>();
-
-                if (result is null)
-                    return LazResult<T>.Failed("Error when read HttpResponseMessage");
-
-                return result;
-            }
-            catch (Exception ex)
-            {
-                return LazResult<T>.Failed(ex.Message);
-            }
-
-        }
-
-        [Obsolete("Use Read<T> instead.")]
-        public static async Task<LazResult<T>> ReadData<T>(this HttpResponseMessage response)
+        public static async Task<ILazResponse<T>> ReadData<T>(this HttpResponseMessage response)
         {
             try
             {
                 var result = await response.Content.ReadFromJsonAsync<LazData<T>>();
 
                 if (result is null)
-                    return LazResult<T>.Failed("Error when read LazResult.Data from HttpResponseMessage");
+                    return LazData<T>.Failed("Error when read LazResponse.Data from HttpResponseMessage");
 
-                return new LazResult<T>
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return LazData<T>.Failed(ex.Message);
+            }
+
+        }
+
+        public static async Task<ILazResponse<T>> ReadResult<T>(this HttpResponseMessage response)
+        {
+            try
+            {
+                var result = await response.Content.ReadFromJsonAsync<LazResult<T>>();
+
+                if (result is null)
+                    return LazResponse<T>.Failed("Error when read LazResponse.Result from HttpResponseMessage");
+
+                return new LazData<T>
                 {
                     Type = result.Type,
                     Code = result.Code,
@@ -49,24 +46,24 @@ namespace Light.Lazada
             }
             catch (Exception ex)
             {
-                return LazResult<T>.Failed(ex.Message);
+                return LazData<T>.Failed(ex.Message);
             }
         }
 
-        public static async Task<LazResult> ReadDetail(this HttpResponseMessage response)
+        public static async Task<ILazResponse<T>> ReadDetail<T>(this HttpResponseMessage response)
         {
             try
             {
-                var lazResult = await response.Content.ReadFromJsonAsync<LazResult>();
+                var result = await response.Content.ReadFromJsonAsync<LazDetail<T>>();
 
-                if (lazResult is null)
-                    return LazResult<List<UploadStockResponse>>.Failed("Error when read LazResult.Detail from HttpResponseMessage");
+                if (result is null)
+                    return LazData<T>.Failed("Error when read LazResult.Detail from HttpResponseMessage");
 
-                return lazResult;
+                return result;
             }
             catch (Exception ex)
             {
-                return LazResult<List<UploadStockResponse>>.Failed(ex.Message);
+                return LazData<T>.Failed(ex.Message);
             }
         }
     }

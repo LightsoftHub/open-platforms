@@ -14,7 +14,7 @@ namespace Light.Lazada
         {
         }
 
-        public async Task<LazResult<OrderDocument>> GetDocument(IEnumerable<string> orderItemIds)
+        public async Task<ILazResponse<OrderDocument>> GetDocument(IEnumerable<string> orderItemIds)
         {
             var path = "/order/document/get";
 
@@ -26,12 +26,12 @@ namespace Light.Lazada
 
             var response = await TryGetAsync(path, request);
 
-            var result = await response.Read<OrderDocument>();
+            var result = await response.ReadData<OrderDocument>();
 
             return result;
         }
 
-        public async Task<LazResult<OrdersList>> GetOrders(int offset = 0, int limit = 100,
+        public async Task<ILazResponse<OrdersList>> GetOrders(int offset = 0, int limit = 100,
             DateTimeOffset? createdAfter = null, DateTimeOffset? createdBefore = null,
             DateTimeOffset? updateAfter = null, DateTimeOffset? updateBefore = null)
         {
@@ -56,12 +56,12 @@ namespace Light.Lazada
 
             var response = await TryGetAsync(path, request);
 
-            var result = await response.Read<OrdersList>();
+            var result = await response.ReadData<OrdersList>();
 
             return result;
         }
 
-        public async Task<LazResult<Order>> GetOrder(string orderId)
+        public async Task<ILazResponse<Order>> GetOrder(string orderId)
         {
             var path = "/order/get";
             var request = new Dictionary<string, string>()
@@ -71,12 +71,12 @@ namespace Light.Lazada
 
             var response = await TryGetAsync(path, request);
 
-            var result = await response.Read<Order>();
+            var result = await response.ReadData<Order>();
 
             return result;
         }
 
-        public async Task<LazResult<IEnumerable<OrderItem>>> GetOrderItems(string orderId)
+        public async Task<ILazResponse<IEnumerable<OrderItem>>> GetOrderItems(string orderId)
         {
             var path = "/order/items/get";
             var request = new Dictionary<string, string>()
@@ -86,7 +86,7 @@ namespace Light.Lazada
 
             var response = await TryGetAsync(path, request);
 
-            var result = await response.Read<IEnumerable<OrderItem>>();
+            var result = await response.ReadData<IEnumerable<OrderItem>>();
 
             return result;
         }

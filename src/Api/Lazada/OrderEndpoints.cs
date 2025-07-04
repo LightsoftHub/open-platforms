@@ -24,5 +24,17 @@ public static class OrderEndpoints
             {
                 return orderClient.GetDocument(orderItemIds);
             });
+
+        endpoint
+            .MapPost("/fulfillment/get_shipment_provider/{orderid}", ([FromRoute] string orderid, [FromBody] string[] orderItemIds, IFulfillmentClient client) =>
+            {
+                return client.GetShipmentProvider(orderid, orderItemIds);
+            });
+
+        endpoint
+            .MapGet("/fulfillment/print_awb/{packageId}", ([FromRoute] string packageId, IFulfillmentClient client) =>
+            {
+                return client.PrintAWB(packageId);
+            });
     }
 }

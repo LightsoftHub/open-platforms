@@ -18,14 +18,14 @@ namespace Light.Lazada.Models.Fulfillments
         [JsonPropertyName("error_code")]
         public string ErrorCode { get; set; }
 
-        public LazResult Result
+        public LazResponse Result
         {
             get
             {
                 if (Success)
-                    return LazResult.Success();
+                    return LazResponse.Success();
                 else
-                    return LazResult.Failed(ErrorMsg, ErrorCode);
+                    return LazResponse.Failed(ErrorMsg, ErrorCode);
             }
         }
     }

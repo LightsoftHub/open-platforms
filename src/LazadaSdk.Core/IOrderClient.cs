@@ -9,17 +9,17 @@ namespace Light.Lazada
     public interface IOrderClient
     {
         // https://open.lazada.com/apps/doc/api?path=%2Forder%2Fdocument%2Fget
-        Task<LazResult<OrderDocument>> GetDocument(IEnumerable<string> orderItemIds);
+        Task<ILazResponse<OrderDocument>> GetDocument(IEnumerable<string> orderItemIds);
 
         // https://open.lazada.com/apps/doc/api?path=%2Forders%2Fget
-        Task<LazResult<OrdersList>> GetOrders(int offset = 0, int limit = 100,
+        Task<ILazResponse<OrdersList>> GetOrders(int offset = 0, int limit = 100,
             DateTimeOffset? createdAfter = null, DateTimeOffset? createdBefore = null,
             DateTimeOffset? updateAfter = null, DateTimeOffset? updateBefore = null);
 
         // https://open.lazada.com/apps/doc/api?path=%2Forder%2Fget
-        Task<LazResult<Order>> GetOrder(string orderId);
+        Task<ILazResponse<Order>> GetOrder(string orderId);
 
         // https://open.lazada.com/apps/doc/api?path=%2Forder%2Fitems%2Fget
-        Task<LazResult<IEnumerable<OrderItem>>> GetOrderItems(string orderId);
+        Task<ILazResponse<IEnumerable<OrderItem>>> GetOrderItems(string orderId);
     }
 }

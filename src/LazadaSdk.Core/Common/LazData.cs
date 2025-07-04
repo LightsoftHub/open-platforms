@@ -2,9 +2,9 @@
 
 namespace Light.Lazada.Common
 {
-    public class LazResult<T> : LazResponse<T>, ILazResponse<T>
+    public class LazData<T> : LazResponse<T>, ILazResponse<T>
     {
-        [JsonPropertyName("result")]
+        [JsonPropertyName("data")]
         public override T Data { get; set; }
     }
 }

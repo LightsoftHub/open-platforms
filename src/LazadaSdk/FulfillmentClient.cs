@@ -13,7 +13,7 @@ namespace Light.Lazada
         {
         }
 
-        public async Task<LazResult<ShipmentProviderResult>> GetShipmentProvider(string orderId, string[] orderItemIds)
+        public async Task<ILazResponse<ShipmentProviderResult>> GetShipmentProvider(string orderId, string[] orderItemIds)
         {
             var path = "/order/shipment/providers/get";
 
@@ -36,12 +36,12 @@ namespace Light.Lazada
 
             var response = await TryGetAsync(path, request);
 
-            var result = await response.Read<ShipmentProviderResult>();
+            var result = await response.ReadResult<ShipmentProviderResult>();
 
             return result;
         }
 
-        public async Task<LazResult<PackResult>> Pack(string orderId, string[] orderItemIds)
+        public async Task<ILazResponse<PackResult>> Pack(string orderId, string[] orderItemIds)
         {
             var path = "/order/fulfill/pack";
 
@@ -66,12 +66,12 @@ namespace Light.Lazada
 
             var response = await TryPostAsync(path, request);
 
-            var result = await response.Read<PackResult>();
+            var result = await response.ReadResult<PackResult>();
 
             return result;
         }
 
-        public async Task<LazResult<ReadyToShipResult>> ReadyToShip(string packageId)
+        public async Task<ILazResponse<ReadyToShipResult>> ReadyToShip(string packageId)
         {
             var path = "/order/package/rts";
 
@@ -93,12 +93,12 @@ namespace Light.Lazada
 
             var response = await TryPostAsync(path, request);
 
-            var result = await response.Read<ReadyToShipResult>();
+            var result = await response.ReadResult<ReadyToShipResult>();
 
             return result;
         }
 
-        public async Task<LazResult<PrintAWBData>> PrintAWB(string packageId, bool pdf = true)
+        public async Task<ILazResponse<PrintAWBData>> PrintAWB(string packageId, bool pdf = true)
         {
             var path = "/order/package/document/get";
 
@@ -123,16 +123,16 @@ namespace Light.Lazada
 
             var response = await TryGetAsync(path, request);
 
-            var result = await response.Read<PrintAWBResult>();
+            var result = await response.ReadResult<PrintAWBResult>();
 
             var printAwbResult = result?.Data;
 
             if (printAwbResult?.Success is true)
             {
-                return LazResult<PrintAWBData>.Success(printAwbResult.Data);
+                return LazData<PrintAWBData>.Success(printAwbResult.Data);
             }
 
-            return LazResult<PrintAWBData>.Failed("Error when get AWB data");
+            return LazData<PrintAWBData>.Failed("Error when get AWB data");
         }
     }
 }
