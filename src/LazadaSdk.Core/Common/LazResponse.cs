@@ -16,7 +16,7 @@ namespace Light.Lazada.Common
         [JsonPropertyName("request_id")]
         public string RequestId { get; set; }
 
-        public virtual bool IsSuccess => Code.Equals("0");
+        public bool IsSuccess => Code.Equals("0");
 
         public static LazResponse Success(string message = null)
         {
@@ -40,8 +40,6 @@ namespace Light.Lazada.Common
     public abstract class LazResponse<T> : LazResponse, ILazResponse<T>
     {
         public abstract T Data { get; set; }
-
-        public override bool IsSuccess => base.IsSuccess && Data != null;
 
         public static ILazResponse<T> Success(T result)
         {
